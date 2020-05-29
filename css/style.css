@@ -2,6 +2,19 @@
   font-size: 1.2em;
 }
 
+body {
+  height: 100%;
+  width:100%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
 #player1 {
   width: 50%;
   height: 100%; /* la moitié de son conteneur <body> */
