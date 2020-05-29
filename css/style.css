@@ -4,16 +4,18 @@
 
 #player1 {
   width: 50%;
-  height: 50%; /* la moitié de son conteneur <body> */
+  height: 100%; /* la moitié de son conteneur <body> */
   float: left;
   display: flex;
   justify-content: space-around;
+  flex-direction: column-reverse;
 }
 
 #player2 {
   width: 50%;
-  height: 50%; /* la moitié de son conteneur <body> */
+  height: 100%; /* la moitié de son conteneur <body> */
   float: right;
   display: flex;
   justify-content: space-around;
+  flex-direction: column-reverse;
 }
