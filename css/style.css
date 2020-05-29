@@ -1,10 +1,5 @@
 * {
-  font-size: 1.2em;
-}
-
-body {
-  height: 100vh;
-  width: 100%;
+  font-size: 3vmin;
 }
 
 footer {
@@ -13,6 +8,10 @@ footer {
   width: 100%;
   display: flex;
   justify-content: space-around;
+}
+
+#plateau {
+
 }
 
 #player1 {
@@ -32,6 +31,7 @@ footer {
 }
 
 #page {
+  height: 98vh;
   display: flex;
   justify-content: space-around;
   flex-direction: column-reverse;
