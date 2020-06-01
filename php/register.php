@@ -1,5 +1,5 @@
 <?php
-include_once ("config.php");
+include_once ("includes/config.php");
 $user = $_POST['user'];
 $email = $_POST['mail'];
 $pass = $_POST['pass'];
