@@ -18,9 +18,7 @@ $rep = $req->fetchAll();
 if (empty($rep))
 {
     echo "non";
-}
-else
-{
+} else {
     session_start();
     echo "oui";
 }
