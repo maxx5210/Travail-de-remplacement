@@ -10,7 +10,15 @@ footer {
   justify-content: space-around;
 }
 
-#plateau {}
+.carte {
+  height: 60vh;
+  width: 15vw;
+}
+
+.doscarte{
+  height: 60vh;
+  width: 16vw;
+}
 
 #player1 {
   width: 50%;
@@ -28,6 +36,7 @@ footer {
   float: right;
   display: flex;
   justify-content: space-around;
+  flex-direction: row-reverse;
 }
 
 #page {
