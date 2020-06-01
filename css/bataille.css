@@ -10,13 +10,12 @@ footer {
   justify-content: space-around;
 }
 
-#plateau {
-
-}
+#plateau {}
 
 #player1 {
   width: 50%;
-  height: 100%; /* la moitié de son conteneur <body> */
+  height: 100%;
+  /* la moitié de son conteneur <body> */
   float: left;
   display: flex;
   justify-content: space-around;
@@ -24,7 +23,8 @@ footer {
 
 #player2 {
   width: 50%;
-  height: 100%; /* la moitié de son conteneur <body> */
+  height: 100%;
+  /* la moitié de son conteneur <body> */
   float: right;
   display: flex;
   justify-content: space-around;

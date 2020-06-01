@@ -7,7 +7,7 @@ fieldset {
   justify-content: space-around;
   flex-direction: column;
   width: 50vw;
-  height: 20vh;
+  height: 33vh;
   align-items: center;
 }
 
@@ -17,16 +17,16 @@ form {
   flex-direction: column;
 }
 
-.connexion {
+.inscription {
   display: flex;
   flex-direction: column;
 }
 
-.insc {
+.conn {
   margin-top: 2vh;
 }
 
-#log {
+#ins {
   display: flex;
   justify-content: center;
 }

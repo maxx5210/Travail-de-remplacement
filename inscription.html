@@ -3,33 +3,41 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="css/register.css">
+  <link rel="stylesheet" href="css/inscription.css">
   <title>Inscritpion</title>
 </head>
 
 <body>
-  <div class="">
-    Déjà un compte ? <a href="index.html">Connectez vous !</a>
-  </div>
-
-  <div class="">
+  <div id="ins">
     <form method="post">
-      <label for="user">Nom d'utilisateur</label>
-      <input type="text" id="user">
-      <br>
-      <label for="mail">Adresse Mail</label>
-      <input type="email" id="mail">
-      <br>
-      <label for="pass1">Mot de passe</label>
-      <input type="password" id="pass1">
-      <br>
-      <label for="pass2">Confirmation du mot de passe</label>
-      <input type="password" id="pass2">
-      <br>
-      <button type="button" onclick="register();" name="button">Inscription</button>
+      <fieldset>
+        <legend>Inscription</legend>
+        <div class="inscription">
+          <label for="user">Nom d'utilisateur</label>
+          <input type="text" id="user">
+        </div>
+        <br>
+        <div class="inscription">
+          <label for="mail">Adresse Mail</label>
+          <input type="email" id="mail">
+        </div>
+        <br>
+        <div class="inscription">
+          <label for="pass1">Mot de passe</label>
+          <input type="password" id="pass1">
+        </div>
+        <br>
+        <div class="inscription">
+          <label for="pass2">Confirmation du mot de passe</label>
+          <input type="password" id="pass2">
+        </div>
+        <br>
+        <button type="button" onclick="register();" name="button">Inscription</button>
+      </fieldset>
+      <div class="conn"> Déjà un compte ? <a href="index.html">Connectez vous !</a></div>
     </form>
   </div>
-<script src="js/inscription.js" charset="utf-8"></script>
+  <script src="js/inscription.js" charset="utf-8"></script>
 </body>
 
 </html>

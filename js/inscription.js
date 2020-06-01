@@ -59,5 +59,5 @@ function send() {
       console.log("echec");
       alert("Utilisateur existant !");
     }
-  }, 500);
+  }, 1000);
 }

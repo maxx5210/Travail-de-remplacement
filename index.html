@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/index.css">
-    <title>Page de connexion</title>
-  </head>
-  <body>
-<div id="log">
-    <form class="" action="index.html" method="post">
-      <label for="user">Nom d'utilisateur</label>
-      <input type="text" id="user">
-      <label for="pass">Mot de passe</label>
-      <input type="password" id="pass">
-      <button type="button" onclick="connexion();" name="button">Se connecter</button>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/index.css">
+  <title>Page de connexion</title>
+</head>
+
+<body>
+  <div id="log">
+    <form action="index.html" method="post">
+      <fieldset>
+        <legend>Connexion</legend>
+        <div class="connexion">
+          <label for="user">Nom d'utilisateur</label>
+          <input type="text" id="user">
+        </div>
+        <div class="connexion">
+          <label for="pass">Mot de passe</label>
+          <input type="password" id="pass">
+        </div>
+        <button type="button" onclick="connexion();" name="button">Se connecter</button>
+      </fieldset>
+      <div class="insc"> Pas de compte ? <a href="inscription.html">Inscription ici</a></div>
     </form>
-</div>
-<br>
-<br>
-<div class="insc">
-Pas de compte ? <a href="inscription.html">Inscription ici</a>
-</div>
-  </body>
-  <script src="js/connexion.js" charset="utf-8"></script>
+  </div>
+</body>
+<script src="js/connexion.js" charset="utf-8"></script>
+
 </html>
