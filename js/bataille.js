@@ -7,6 +7,7 @@ var carte2 = document.getElementById('carte2');
 var paquet1 = [];
 var paquet2 = [];
 var balance = true;
+var obj;
 var reserve = ["1clubs", "1diamonds", "1hearts", "1spades", "2clubs", "2diamonds", "2hearts", "2spades", "3clubs", "3diamonds", "3hearts", "3spades",
   "4clubs", "4diamonds", "4hearts", "4spades", "5clubs", "5diamonds", "5hearts", "5spades", "6clubs", "6diamonds", "6hearts", "6spades",
   "7clubs", "7diamonds", "7hearts", "7spades", "8clubs", "8diamonds", "8hearts", "8spades", "9clubs", "9diamonds", "9hearts", "9spades",
@@ -15,9 +16,9 @@ var reserve = ["1clubs", "1diamonds", "1hearts", "1spades", "2clubs", "2diamonds
 ];
 ///////////////////////////////////////////////////////////////////////////////
 
-
 window.onload = function() {
-  ////////////////////////////////Mélange du paquet//////////////////////////////
+  getjson();
+  ////////////////////////////////Mélange du paquet////////////////////////////
   for (var i = 0; i <= (reserve.length - 1); i++) {
     let max = reserve.length;
     let rand = getRandomInt(max);
@@ -32,7 +33,7 @@ window.onload = function() {
     reserve.splice(rand, 1);
   }
   console.log(paquet1, paquet2, reserve);
-  ///////////////////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////////////////
 }
 
 
@@ -43,17 +44,62 @@ function getRandomInt(max) {
 
 reveler.onclick = function() {
   var draw = paquet1.shift();
-  console.log(draw);
   carte1.src = "cartes/" + draw + ".svg";
   carte1.alt = draw;
-  console.log(carte1);
+
+  ////////////////////////Détection Victoire et Défaite////////////////////////
+  if (paquet1.length === 0) {
+    alert("Le Joueur 1 a remporté la partie");
+  }
+  /////////////////////////////////////////////////////////////////////////////
 }
 
 devoiler.onclick = function() {
   var draw = paquet2.shift();
-  console.log(draw);
   carte2.src = "cartes/" + draw + ".svg";
   carte2.alt = draw;
-  console.log(carte2);
+
+  ////////////////////////Détection Victoire et Défaite////////////////////////
+  if (paquet2.length === 0) {
+    alert("Le Joueur 2 a remporté la partie");
+  }
+  /////////////////////////////////////////////////////////////////////////////
 }
 ///////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////AJAX/////////////////////////////////////
+function createHttpRequest() {
+  var req = null;
+  if (window.XMLHttpRequest) {
+    req = new XMLHttpRequest();
+  } else {
+    try {
+      req = new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (e) {
+      try {
+        req = new ActiveXObject("Microsoft.XMLHTTP");
+      } catch (e2) {}
+    }
+  }
+  if (req == null) {
+    alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
+  }
+  return req;
+}
+
+function getjson() {
+  var req = createHttpRequest();
+  req.onreadystatechange = function() {
+    if (req.status == 200) {
+      console.log(req.status);
+      obj = req.responseText;
+    }
+  }
+  req.open("POST", "js/cards.json", true);
+  req.send();
+  setTimeout(function() {
+    obj = JSON.parse(obj)
+    console.log(obj);
+  },1000);
+}
+//////////////////////////////////////////////////////////////////////////////
