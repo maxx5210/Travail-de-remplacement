@@ -15,8 +15,7 @@ $req->execute(array(
 ));
 $rep = $req->fetchAll();
 
-if (empty($rep))
-{
+if (empty($rep)) {
     echo "non";
 } else {
     session_start();

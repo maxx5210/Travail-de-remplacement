@@ -27,5 +27,10 @@ function deconnexion() {
   }
   req.open("POST", "php/deconnexion.php", true);
   req.send();
+  window.sessionStorage.clear();
   document.location.href = "index.html"
+}
+
+window.onload = function() {
+  document.getElementById('connecte').innerHTML = "Vous êtes connecté en tant que " + window.sessionStorage.getItem('name');
 }

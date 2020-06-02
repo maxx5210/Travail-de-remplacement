@@ -35,6 +35,7 @@ function connexion() {
     if (req.responseText.includes("oui") == true) {
       console.log("retour");
       alert("Connecté !");
+      window.sessionStorage.setItem('name', user);
       document.location.href = "menu.html";
     } else {
       console.log("echec");
