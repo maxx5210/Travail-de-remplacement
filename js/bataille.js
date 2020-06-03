@@ -6,8 +6,12 @@ var devoiler = document.getElementById('dos2');
 var carte2 = document.getElementById('carte2');
 var paquet1 = [];
 var paquet2 = [];
-var balance = true;
 var obj;
+var balance = true;
+var player1click;
+var player2click;
+var player1card;
+var player2card;
 var reserve = ["1clubs", "1diamonds", "1hearts", "1spades", "2clubs", "2diamonds", "2hearts", "2spades", "3clubs", "3diamonds", "3hearts", "3spades",
   "4clubs", "4diamonds", "4hearts", "4spades", "5clubs", "5diamonds", "5hearts", "5spades", "6clubs", "6diamonds", "6hearts", "6spades",
   "7clubs", "7diamonds", "7hearts", "7spades", "8clubs", "8diamonds", "8hearts", "8spades", "9clubs", "9diamonds", "9hearts", "9spades",
@@ -20,12 +24,95 @@ window.onload = function() {
   getjson();
 }
 
-
 ////////////////////////////////////Fonctions//////////////////////////////////
 
-////////////////////////////////Mélange du paquet////////////////////////////
+//////////////////////////////////Comparaison//////////////////////////////////
+function comparaison() {
+  if (player1click === true && player2click === true) {
+
+    switch (true) {
+
+      case player1card['valeur'] > player2card['valeur']:
+        console.log("Le J1 remporte les cartes");
+        player1click = false;
+        player2click = false;
+        reveler.classList.remove('disabled');
+        devoiler.classList.remove('disabled');
+        for (let i = 0; i <= reserve.length - 1; i++) {
+          paquet1.push(reserve[i]);
+        }
+        reserve.splice(0, reserve.length);
+        console.log("Paquet du J1 : ", paquet1);
+        break;
+
+      case player1card['valeur'] < player2card['valeur']:
+        console.log("Le J2 remporte les cartes");
+        player1click = false;
+        player2click = false;
+        reveler.classList.remove('disabled');
+        devoiler.classList.remove('disabled');
+        for (let i = 0; i <= reserve.length - 1; i++) {
+          paquet2.push(reserve[i]);
+        }
+        reserve.splice(0, reserve.length);
+        console.log("Paquet du J2 : ", paquet2);
+        break;
+
+      case player1card['valeur'] === player2card['valeur']:
+        console.log("Bataille !");
+        reserve.push(paquet1.shift(), paquet2.shift());
+        console.log("Reserve : ", reserve);
+        carte1.src = "cartes/cardback.svg";
+        carte2.src = "cartes/cardback.svg";
+        player1click = false;
+        player2click = false;
+        reveler.classList.remove('disabled');
+        devoiler.classList.remove('disabled');
+        comparaison();
+        break;
+
+      default:
+        alert("Erreur FATALE ! (Comment ta fait ça Billy ? Sérieusement)")
+    }
+  }
+}
+///////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////Pose des Cartes////////////////////////////////
+reveler.onclick = function() {
+  let draw = paquet1.shift();
+  player1card = draw;
+  player1click = true;
+  reveler.classList.add('disabled');
+  reserve.push(player1card);
+  carte1.src = draw['src'] + ".svg";
+  carte1.alt = draw;
+
+  if (paquet1.length === 0) {
+    alert("Le Joueur 1 a remporté la partie");
+  }
+  comparaison();
+}
+
+devoiler.onclick = function() {
+  let draw = paquet2.shift();
+  player2card = draw;
+  player2click = true;
+  devoiler.classList.add('disabled');
+  reserve.push(player2card);
+  carte2.src = draw['src'] + ".svg";
+  carte2.alt = draw;
+
+  if (paquet2.length === 0) {
+    alert("Le Joueur 2 a remporté la partie");
+  }
+  comparaison();
+}
+///////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////Mélange du paquet//////////////////////////////
 function distribution() {
-  for (var i = 0; i <= (reserve.length - 1); i++) {
+  for (let i = 0; i <= 51; i++) {
     let max = reserve.length;
     let rand = getRandomInt(max);
 
@@ -38,7 +125,9 @@ function distribution() {
     }
     reserve.splice(rand, 1);
   }
-  console.log(paquet1, paquet2, reserve);
+  console.log("Cartes du joueur 1 : ", paquet1);
+  console.log("Cartes du joueur 2 : ", paquet2);
+  console.log("Reserve : ", reserve);
 }
 /////////////////////////////////////////////////////////////////////////////
 
@@ -46,29 +135,7 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-reveler.onclick = function() {
-  var draw = paquet1.shift();
-  carte1.src = draw['src'] + ".svg";
-  carte1.alt = draw;
 
-  ////////////////////////Détection Victoire et Défaite////////////////////////
-  if (paquet1.length === 0) {
-    alert("Le Joueur 1 a remporté la partie");
-  }
-  /////////////////////////////////////////////////////////////////////////////
-}
-
-devoiler.onclick = function() {
-  var draw = paquet2.shift();
-  carte2.src = draw['src'] + ".svg";
-  carte2.alt = draw;
-
-  ////////////////////////Détection Victoire et Défaite////////////////////////
-  if (paquet2.length === 0) {
-    alert("Le Joueur 2 a remporté la partie");
-  }
-  /////////////////////////////////////////////////////////////////////////////
-}
 ///////////////////////////////////////////////////////////////////////////////
 
 
@@ -78,7 +145,7 @@ devoiler.onclick = function() {
 
 /////////////////////////////////////AJAX//////////////////////////////////////
 
-/////////////////////////////////Http Request/////////////////////////////////
+/////////////////////////////////Http Request//////////////////////////////////
 function createHttpRequest() {
   var req = null;
   if (window.XMLHttpRequest) {
@@ -104,7 +171,7 @@ function getjson() {
   var req = createHttpRequest();
   req.onreadystatechange = function() {
     if (req.status == 200) {
-      console.log(req.status);
+      console.log("Status de la requête JSON : Cartes", req.status);
       obj = req.responseText;
     }
   }

@@ -15,9 +15,14 @@ footer {
   width: 15vw;
 }
 
-.doscarte{
+.doscarte {
   height: 60vh;
   width: 16vw;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 #player1 {
