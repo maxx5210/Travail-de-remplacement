@@ -18,33 +18,37 @@ var reserve = ["1clubs", "1diamonds", "1hearts", "1spades", "2clubs", "2diamonds
 
 window.onload = function() {
   getjson();
-  ////////////////////////////////Mélange du paquet////////////////////////////
+}
+
+
+////////////////////////////////////Fonctions//////////////////////////////////
+
+////////////////////////////////Mélange du paquet////////////////////////////
+function distribution() {
   for (var i = 0; i <= (reserve.length - 1); i++) {
     let max = reserve.length;
     let rand = getRandomInt(max);
 
     if (balance === true) {
-      paquet1.push(reserve[rand]);
+      paquet1.push(obj[reserve[rand]]);
       balance = false;
     } else {
-      paquet2.push(reserve[rand]);
+      paquet2.push(obj[reserve[rand]]);
       balance = true;
     }
     reserve.splice(rand, 1);
   }
   console.log(paquet1, paquet2, reserve);
-  /////////////////////////////////////////////////////////////////////////////
 }
+/////////////////////////////////////////////////////////////////////////////
 
-
-////////////////////////////////////Fonctions//////////////////////////////////
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
 reveler.onclick = function() {
   var draw = paquet1.shift();
-  carte1.src = "cartes/" + draw + ".svg";
+  carte1.src = draw['src'] + ".svg";
   carte1.alt = draw;
 
   ////////////////////////Détection Victoire et Défaite////////////////////////
@@ -56,7 +60,7 @@ reveler.onclick = function() {
 
 devoiler.onclick = function() {
   var draw = paquet2.shift();
-  carte2.src = "cartes/" + draw + ".svg";
+  carte2.src = draw['src'] + ".svg";
   carte2.alt = draw;
 
   ////////////////////////Détection Victoire et Défaite////////////////////////
@@ -67,7 +71,14 @@ devoiler.onclick = function() {
 }
 ///////////////////////////////////////////////////////////////////////////////
 
-/////////////////////////////////////AJAX/////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////AJAX//////////////////////////////////////
+
+/////////////////////////////////Http Request/////////////////////////////////
 function createHttpRequest() {
   var req = null;
   if (window.XMLHttpRequest) {
@@ -86,7 +97,9 @@ function createHttpRequest() {
   }
   return req;
 }
+///////////////////////////////////////////////////////////////////////////////
 
+/////////////////////////////////Recup du JSON/////////////////////////////////
 function getjson() {
   var req = createHttpRequest();
   req.onreadystatechange = function() {
@@ -98,8 +111,10 @@ function getjson() {
   req.open("POST", "js/cards.json", true);
   req.send();
   setTimeout(function() {
-    obj = JSON.parse(obj)
-    console.log(obj);
-  },1000);
+    obj = JSON.parse(obj);
+    distribution();
+  }, 1000);
 }
-//////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
