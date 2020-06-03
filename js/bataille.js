@@ -180,6 +180,8 @@ function getjson() {
   setTimeout(function() {
     obj = JSON.parse(obj);
     distribution();
+    reveler.classList.remove('disabled');
+    devoiler.classList.remove('disabled');
   }, 1000);
 }
 ///////////////////////////////////////////////////////////////////////////////
