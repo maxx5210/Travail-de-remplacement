@@ -2,17 +2,17 @@
   font-size: 3vmin;
 }
 
-footer {
+header {
   position: fixed;
-  bottom: 0%;
+  bottom: 70%;
   width: 100%;
-  display: flex;
-  justify-content: space-around;
 }
 
 .carte {
+  position: relative;
   height: 60vh;
   width: 15vw;
+  z-index: -1;
 }
 
 .doscarte {
@@ -20,33 +20,44 @@ footer {
   width: 16vw;
 }
 
+.animationgauche {
+  transition: left 1s linear;
+  left: 0px;
+}
+
+.animationdroite {
+  transition: right 1s linear;
+  right: 0px;
+}
+
 .disabled {
   pointer-events: none;
   opacity: 0.5;
 }
 
+.ligne {
+  display: flex;
+  justify-content: space-around;
+}
+
+.colone {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 #player1 {
   width: 50%;
   height: 100%;
-  /* la moitié de son conteneur <body> */
   float: left;
-  display: flex;
-  justify-content: space-around;
 }
 
 #player2 {
   width: 50%;
   height: 100%;
-  /* la moitié de son conteneur <body> */
   float: right;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row-reverse;
 }
 
 #page {
   height: 98vh;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column-reverse;
 }

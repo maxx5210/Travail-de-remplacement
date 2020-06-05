@@ -13,24 +13,30 @@
 
   </header>
 
-  <div id="page">
+  <div id="page" class="colone">
     <div id="plateau">
-      <div id="player1">
+      <div id="player1" class="ligne">
         <img class="doscarte disabled" id="dos1" src="cartes/cardback.svg" alt="Dos de Jeu de Carte">
         <img class="carte" id="carte1" src="cartes/nothing.svg" alt="Rien">
       </div>
 
-      <div id="player2">
-        <img class="doscarte disabled" id="dos2" src="cartes/cardback.svg" alt="Dos de Jeu de Carte">
+      <div id="player2" class="ligne">
         <img class="carte" id="carte2" src="cartes/nothing.svg" alt="Rien">
+        <img class="doscarte disabled" id="dos2" src="cartes/cardback.svg" alt="Dos de Jeu de Carte">
       </div>
     </div>
   </div>
 
-  <footer>
-    <h1 id="name1">Nom1</h1>
-    <h1 id="name2">Nom2</h1>
-  </footer>
+  <header class="colone">
+    <div class="ligne">
+      <h1 id="name1">Nom1</h1>
+      <h1 id="name2">Nom2</h1>
+    </div>
+    <div class="ligne">
+      <span id="cartpl1">Nombre de carte : 26</span>
+      <span id="cartpl2">Nombre de carte : 26</span>
+    </div>
+  </header>
 
   <script src="js/bataille.js"></script>
 </body>
