@@ -1,4 +1,5 @@
 <?php
-session_unset();
+include_once('includes/session.php');
+
 session_destroy();
 ?>

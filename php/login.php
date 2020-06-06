@@ -1,5 +1,6 @@
 <?php
-include_once('includes/session.php');
+//include_once('includes/session.php');
+include_once('includes/config.php');
 $user = $_POST['user'];
 $pass = $_POST['pass'];
 $pass = md5($pass);
@@ -9,10 +10,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=' . $db_name, $db_user, $db_pass, ar
 )) or die('Failed to connect');
 
 $req = $bdd->prepare("SELECT * FROM users WHERE name = ? AND pass = ?") or die('Impossible d\'ajouter à la base');
-$req->execute(array(
-    $user,
-    $pass
-));
+$req->execute(array($user,$pass));
 $rep = $req->fetchAll();
 
 if (empty($rep)) {
