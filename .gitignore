@@ -2,7 +2,7 @@
 
 # Ignore files called 'file.ext'
 file.ext
-php/includes/*
+php/includes/config.php
 
 # Comments can't be on the same line as rules!
 # The following line ignores files called 'file.ext # not a comment'

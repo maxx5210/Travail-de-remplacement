@@ -42,16 +42,26 @@ function comparaison() {
           paquet1.push(reserve[i]);
         }
         reserve.splice(0, reserve.length);
-        carte1.classList.add('animationgauche');
-        carte2.classList.add('animationgauche');
+
+        carte1.animate([{
+          transform: 'translateX(-25vw)'
+        }], {
+          duration: 750,
+          iterations: 1
+        });
+        carte2.animate([{
+          transform: 'translateX(-49vw)'
+        }], {
+          duration: 750,
+          iterations: 1
+        });
+
         setTimeout(function() {
           carte1.src = "cartes/nothing.svg";
           carte2.src = "cartes/nothing.svg";
           reveler.classList.remove('disabled');
           devoiler.classList.remove('disabled');
-          carte1.classList.remove('animationgauche');
-          carte2.classList.remove('animationgauche');
-        }, 1000);
+        }, 750);
 
         break;
 
@@ -63,16 +73,27 @@ function comparaison() {
           paquet2.push(reserve[i]);
         }
         reserve.splice(0, reserve.length);
-        carte1.classList.add('animationdroite');
-        carte2.classList.add('animationdroite');
+
+        carte1.animate([{
+          transform: 'translateX(49vw)'
+        }], {
+          duration: 750,
+          iterations: 1
+        });
+        carte2.animate([{
+          transform: 'translateX(25vw)'
+        }], {
+          duration: 750,
+          iterations: 1
+        });
+
         setTimeout(function() {
           carte1.src = "cartes/nothing.svg";
           carte2.src = "cartes/nothing.svg";
           reveler.classList.remove('disabled');
           devoiler.classList.remove('disabled');
-          carte1.classList.remove('animationdroite');
-          carte2.classList.remove('animationdroite');
-        }, 1000);
+        }, 750);
+
         break;
 
       case player1card['valeur'] === player2card['valeur']:

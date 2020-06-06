@@ -1,38 +1,25 @@
+/*////////////////////////////////// Purged //////////////////////////////////*/
 * {
   font-size: 3vmin;
 }
 
 header {
-  position: fixed;
-  bottom: 70%;
-  width: 100%;
+  margin-bottom: 2vh;
 }
 
 .carte {
-  position: relative;
-  height: 60vh;
+  height: 28vh;
   width: 15vw;
   z-index: -1;
 }
 
 .doscarte {
-  height: 60vh;
+  height: 28vh;
   width: 16vw;
-}
-
-.animationgauche {
-  transition: left 1s linear;
-  left: 0px;
-}
-
-.animationdroite {
-  transition: right 1s linear;
-  right: 0px;
 }
 
 .disabled {
   pointer-events: none;
-  opacity: 0.5;
 }
 
 .ligne {
@@ -43,21 +30,16 @@ header {
 .colone {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 #player1 {
   width: 50%;
-  height: 100%;
   float: left;
-}
-
-#player2 {
-  width: 50%;
-  height: 100%;
-  float: right;
 }
 
 #page {
   height: 98vh;
 }
+
+/*////////////////////////////////////////////////////////////////////////////*/
