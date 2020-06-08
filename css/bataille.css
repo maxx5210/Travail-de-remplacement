@@ -8,18 +8,22 @@ header {
 }
 
 .carte {
-  height: 28vh;
-  width: 15vw;
+  height: 22vw;
+  width: 16vw;
   z-index: -1;
 }
 
 .doscarte {
-  height: 28vh;
+  height: 23vw;
   width: 16vw;
 }
 
 .disabled {
   pointer-events: none;
+}
+
+.centre {
+  align-items: center;
 }
 
 .ligne {
@@ -41,5 +45,43 @@ header {
 #page {
   height: 98vh;
 }
+
+/*///////////////////////////////MEDIA QUERIES///////////////////////////////*/
+@media screen AND (orientation: portrait) {
+  header {
+    flex-direction: column;
+  }
+
+  .carte {
+    height: 34vw;
+    width: 30vw;
+  }
+
+  .doscarte {
+    height: 35vw;
+    width: 30vw;
+  }
+
+  #page {
+    flex-direction: row;
+  }
+
+  #plateau {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+
+  #player1 {
+    flex-direction: column;
+    height: 50%;
+  }
+
+  #player2 {
+    flex-direction: column;
+    height: 50%;
+  }
+}
+/*///////////////////////////////////////////////////////////////////////////*/
 
 /*////////////////////////////////////////////////////////////////////////////*/
