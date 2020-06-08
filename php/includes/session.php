@@ -38,7 +38,7 @@ function write($sess_id,$data) {
 function destroy() {
   $bdd = new PDO('mysql:host=localhost;dbname='.$GLOBALS["db_name"], $GLOBALS["db_user"], $GLOBALS["db_pass"], array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)) or die('Failed to connect');
 
-  $sql = "DELETE * FROM sessions WHERE sess_id =".session_id();
+  $sql = "DELETE FROM sessions WHERE sess_id =".session_id();
   $req = $bdd->prepare($sql) or die('Echec');
   $req->execute();
 } // end function _destroy()

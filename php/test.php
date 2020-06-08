@@ -1,6 +1,6 @@
 <?php
 
-$user = "maxx";
+$user = "michel";
 include_once('includes/session.php');
 
 session_start();
