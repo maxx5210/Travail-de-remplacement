@@ -46,13 +46,13 @@ function comparaison() {
         carte1.animate([{
           transform: 'translateX(-25vw)'
         }], {
-          duration: 500,
+          duration: 1000,
           iterations: 1
         });
         carte2.animate([{
           transform: 'translateX(-49vw)'
         }], {
-          duration: 500,
+          duration: 1000,
           iterations: 1
         });
 
@@ -61,7 +61,7 @@ function comparaison() {
           carte2.src = "cartes/nothing.svg";
           reveler.classList.remove('disabled');
           devoiler.classList.remove('disabled');
-        }, 500);
+        }, 1000);
 
         break;
 
@@ -77,13 +77,13 @@ function comparaison() {
         carte1.animate([{
           transform: 'translateX(49vw)'
         }], {
-          duration: 500,
+          duration: 1000,
           iterations: 1
         });
         carte2.animate([{
           transform: 'translateX(25vw)'
         }], {
-          duration: 500,
+          duration: 1000,
           iterations: 1
         });
 
@@ -92,7 +92,7 @@ function comparaison() {
           carte2.src = "cartes/nothing.svg";
           reveler.classList.remove('disabled');
           devoiler.classList.remove('disabled');
-        }, 500);
+        }, 1000);
 
         break;
 

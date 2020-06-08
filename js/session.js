@@ -3,7 +3,6 @@ window.onload = function() {
   get();
 }
 
-
 function createHttpRequest() {
   var req = null;
   if (window.XMLHttpRequest) {

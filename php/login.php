@@ -1,6 +1,6 @@
 <?php
-//include_once('includes/session.php');
 include_once('includes/config.php');
+
 $user = $_POST['user'];
 $pass = $_POST['pass'];
 $pass = md5($pass);
@@ -17,6 +17,8 @@ if (empty($rep)) {
     echo "non";
 } else {
     session_start();
+    $req2 = $bdd->prepare("INSERT INTO `sessions`(`sess_id`, `user`, `access`) VALUES (?,?,?)");
+    $req2->execute(array(session_id() ,$user, date("Y-d-m H:i:s")));
     echo "oui";
 }
 ?>

@@ -1,5 +1,6 @@
 <?php
-include_once ("includes/config.php");
+include_once("includes/config.php");
+include_once('includes/garbage.php');
 $user = $_POST['user'];
 $email = $_POST['mail'];
 $pass = $_POST['pass'];
