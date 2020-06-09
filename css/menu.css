@@ -9,3 +9,13 @@
   display: inline-block;
   font-size: 16px;
 }
+
+.modal {
+  border-style: groove;
+  border-color: red;
+  border-width: medium;
+}
+
+.hidden {
+  display: none;
+}

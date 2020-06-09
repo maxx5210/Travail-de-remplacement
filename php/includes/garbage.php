@@ -11,7 +11,7 @@ $req->execute();
 $rep = $req->fetchAll();
 
 foreach ($rep as $key => $value) {
-  if (strtotime($value['access']) < strtotime(date("Y-d-m H:i:s"))-3600000) {
+  if (strtotime($value['access']) < strtotime(date("Y-d-m H:i:s"))-1200) {
     $req2 = $bdd->prepare("DELETE FROM sessions WHERE user = ?");
     $req2->execute(array($value['user']));
   }

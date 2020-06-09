@@ -35,7 +35,25 @@
 
   <button type="button" onclick="deconnexion();" id="deconnexion">Se déconnecter</button>
 
+  <br>
+  <br>
+  <button type="button" name="button" onclick="menu();">Crééer une session</button>
+
   <div id="connecte">
+  </div>
+
+  <div id="creation" class="modal hidden">
+    <label for="select">Jeu</label>
+    <select id="select" name="">
+      <option value=""></option>
+      <option value="test">Test</option>
+      <option value="bataille">Bataille</option>
+    </select>
+    <br>
+    <label for="nom">Nom de la session</label>
+    <input type="text" id="nom">
+    <br>
+    <button type="button" onclick="create();">Valider</button>
   </div>
 </body>
 
