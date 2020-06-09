@@ -26,86 +26,92 @@ window.onload = function() {
   getjson();
 }
 
-////////////////////////////////////Fonctions//////////////////////////////////
 
 //////////////////////////////////Comparaison//////////////////////////////////
 function comparaison() {
+  var triche = getComputedStyle(reveler, null).zIndex;
+
   if (player1click === true && player2click === true) {
 
     switch (true) {
 
       case player1card['valeur'] > player2card['valeur']:
-        console.log("Le J1 remporte les cartes");
-        player1click = false;
-        player2click = false;
-        for (let i = 0; i <= reserve.length - 1; i++) {
-          paquet1.push(reserve[i]);
+        while (reserve.length > 0) {
+          melange(paquet1);
         }
-        reserve.splice(0, reserve.length);
-
-        carte1.animate([{
-          transform: 'translateX(-25vw)'
-        }], {
-          duration: 1000,
-          iterations: 1
-        });
-        carte2.animate([{
-          transform: 'translateX(-49vw)'
-        }], {
-          duration: 1000,
-          iterations: 1
-        });
-
-        setTimeout(function() {
-          carte1.src = "cartes/nothing.svg";
-          carte2.src = "cartes/nothing.svg";
-          reveler.classList.remove('disabled');
-          devoiler.classList.remove('disabled');
-        }, 1000);
-
+        if (triche == 2) {
+          carte1.animate([{
+            transform: 'translateY(-24vh)'
+          }], {
+            duration: 1000,
+            iterations: 1
+          });
+          carte2.animate([{
+            transform: 'translateY(-48vh)'
+          }], {
+            duration: 1000,
+            iterations: 1
+          });
+        } else {
+          carte1.animate([{
+            transform: 'translateX(-25vw)'
+          }], {
+            duration: 1000,
+            iterations: 1
+          });
+          carte2.animate([{
+            transform: 'translateX(-49vw)'
+          }], {
+            duration: 1000,
+            iterations: 1
+          });
+        }
+        newturn();
         break;
 
       case player1card['valeur'] < player2card['valeur']:
-        console.log("Le J2 remporte les cartes");
-        player1click = false;
-        player2click = false;
-        for (let i = 0; i <= reserve.length - 1; i++) {
-          paquet2.push(reserve[i]);
+        while (reserve.length > 0) {
+          melange(paquet2);
         }
-        reserve.splice(0, reserve.length);
-
-        carte1.animate([{
-          transform: 'translateX(49vw)'
-        }], {
-          duration: 1000,
-          iterations: 1
-        });
-        carte2.animate([{
-          transform: 'translateX(25vw)'
-        }], {
-          duration: 1000,
-          iterations: 1
-        });
-
-        setTimeout(function() {
-          carte1.src = "cartes/nothing.svg";
-          carte2.src = "cartes/nothing.svg";
-          reveler.classList.remove('disabled');
-          devoiler.classList.remove('disabled');
-        }, 1000);
-
+        if (triche == 2) {
+          carte1.animate([{
+            transform: 'translateY(48vh)'
+          }], {
+            duration: 1000,
+            iterations: 1
+          });
+          carte2.animate([{
+            transform: 'translateY(24vh)'
+          }], {
+            duration: 1000,
+            iterations: 1
+          });
+        } else {
+          carte1.animate([{
+            transform: 'translateX(49vw)'
+          }], {
+            duration: 1000,
+            iterations: 1
+          });
+          carte2.animate([{
+            transform: 'translateX(25vw)'
+          }], {
+            duration: 1000,
+            iterations: 1
+          });
+        }
+        newturn();
         break;
 
       case player1card['valeur'] === player2card['valeur']:
         console.log("Bataille !");
         reserve.push(paquet1.shift(), paquet2.shift());
-        console.log("Reserve : ", reserve);
-        carte1.src = "cartes/cardback.svg";
-        carte2.src = "cartes/cardback.svg";
-        player1click = false;
-        player2click = false;
         reveler.classList.remove('disabled');
         devoiler.classList.remove('disabled');
+        player1click = false;
+        player2click = false;
+        carte1.src = "cartes/cardback.svg";
+        carte2.src = "cartes/cardback.svg";
         comparaison();
         break;
 
@@ -117,6 +123,20 @@ function comparaison() {
   nbrcart2.innerHTML = "Nombre de cartes : " + paquet2.length;
 }
 ///////////////////////////////////////////////////////////////////////////////
+
+
+//////////////////////////////////Nouveau Tour//////////////////////////////////
+function newturn() {
+  player1click = false;
+  player2click = false;
+  setTimeout(function() {
+    carte1.src = "cartes/nothing.svg";
+    carte2.src = "cartes/nothing.svg";
+    reveler.classList.remove('disabled');
+    devoiler.classList.remove('disabled');
+  }, 1000);
+}
+////////////////////////////////////////////////////////////////////////////////
 
 
 ////////////////////////////////Pose des Cartes////////////////////////////////
@@ -152,32 +172,29 @@ devoiler.onclick = function() {
 ///////////////////////////////////////////////////////////////////////////////
 
 
-////////////////////////////////Mélange du paquet//////////////////////////////
-function distribution() {
-  for (let i = 0; i <= 51; i++) {
-    let max = reserve.length;
-    let rand = getRandomInt(max);
-
-    if (balance === true) {
-      paquet1.push(obj[reserve[rand]]);
-      balance = false;
-    } else {
-      paquet2.push(obj[reserve[rand]]);
-      balance = true;
-    }
-    reserve.splice(rand, 1);
+//////////////////////////////////Initialisation////////////////////////////////
+function playstart() {
+  for (let i = 1; i <= 26; i++) {
+    melange(paquet1);
+    melange(paquet2);
   }
-  console.log("Cartes du joueur 1 : ", paquet1);
-  console.log("Cartes du joueur 2 : ", paquet2);
-  console.log("Reserve : ", reserve);
 }
-/////////////////////////////////////////////////////////////////////////////
-
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
-
 ///////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////Mélange////////////////////////////////////
+function melange(input) {
+  let rand = getRandomInt();
+  input.push(obj[reserve[rand]]);
+  reserve.splice(rand, 1);
+}
+///////////////////////////////////////////////////////////////////////////////
+
+
+function getRandomInt() {
+  return Math.floor(Math.random() * Math.floor(reserve.length));
+}
+
 
 
 
@@ -212,7 +229,7 @@ function getjson() {
   var req = createHttpRequest();
   req.onreadystatechange = function() {
     if (req.status == 200) {
-      console.log("Status de la requête JSON : Cartes", req.status);
+      console.log("Status de la requête JSON : Cartes : ", req.status);
       obj = req.responseText;
     }
   }
@@ -220,7 +237,7 @@ function getjson() {
   req.send();
   setTimeout(function() {
     obj = JSON.parse(obj);
-    distribution();
+    playstart();
     reveler.classList.remove('disabled');
     devoiler.classList.remove('disabled');
   }, 1000);

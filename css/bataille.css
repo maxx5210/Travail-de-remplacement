@@ -22,7 +22,7 @@ header {
   pointer-events: none;
 }
 
-.centre {
+.center {
   align-items: center;
 }
 
@@ -58,8 +58,9 @@ header {
   }
 
   .doscarte {
-    height: 35vw;
+    height: 36vw;
     width: 30vw;
+    z-index: 2;
   }
 
   #page {
