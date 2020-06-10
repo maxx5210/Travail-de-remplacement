@@ -1,3 +1,4 @@
+var obj;
 window.onload = function() {
   afficher();
 }
@@ -10,15 +11,15 @@ function create() {
   let jeu = document.getElementById('select').value;
   let nom = document.getElementById('nom').value;
   if (jeu == "") {
-alert("Séléctionnez un jeu");
-  } else if(nom == "") {
-alert("Rentrez un nom");
+    alert("Séléctionnez un jeu");
+  } else if (nom == "") {
+    alert("Rentrez un nom");
   } else {
-lobby(jeu,nom);
+    lobby(jeu, nom);
   }
 }
 
-function lobby(jeu,nom) {
+function lobby(jeu, nom) {
   var req = createHttpRequest();
   req.onreadystatechange = function() {
     if (req.status == 200) {
@@ -27,8 +28,16 @@ function lobby(jeu,nom) {
     }
   }
   req.open("POST", "php/createlobby.php", true);
+  req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   req.send("jeu=" + jeu + "&nom=" + nom);
   setTimeout(function() {
+    if (req.responseText.includes("oui") == true) {
+      alert("Salle créée");
+    } else if (req.responseText.includes("exist") == true) {
+      alert("Une salle avec le même nom existe déjà");
+    } else {
+      alert("Erreur fatale !");
+    }
   }, 1000);
 }
 
@@ -37,12 +46,14 @@ function afficher() {
   req.onreadystatechange = function() {
     if (req.status == 200) {
       console.log(req.status);
-      console.log(req.responseText);
+      obj = req.responseText;
+      console.log(obj);
     }
   }
   req.open("POST", "php/showlobby.php", true);
   req.send();
-  setTimeout(function() {
+  setTimeout(function () {
+document.getElementById('lobbys').innerHTML = req.responseText;
   }, 1000);
 }
 
