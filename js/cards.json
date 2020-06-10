@@ -2,261 +2,261 @@
   "1diamonds": {
     "titre": "As de Carreau",
     "valeur": 14,
-    "src": "cartes/1diamonds"
+    "src": "1diamonds"
   },
   "1spades": {
     "titre": "As de Pique",
     "valeur": 14,
-    "src": "cartes/1spades"
+    "src": "1spades"
   },
   "1hearts": {
     "titre": "As de Coeur",
     "valeur": 14,
-    "src": "cartes/1hearts"
+    "src": "1hearts"
   },
   "1clubs": {
     "titre": "As de Trefle",
     "valeur": 14,
-    "src": "cartes/1clubs"
+    "src": "1clubs"
   },
   "2diamonds": {
     "titre": "2 de Carreau",
     "valeur": 2,
-    "src": "cartes/2diamonds"
+    "src": "2diamonds"
   },
   "2spades": {
     "titre": "2 de Pique",
     "valeur": 2,
-    "src": "cartes/2spades"
+    "src": "2spades"
   },
   "2hearts": {
     "titre": "2 de Coeur",
     "valeur": 2,
-    "src": "cartes/2hearts"
+    "src": "2hearts"
   },
   "2clubs": {
     "titre": "2 de Trefle",
     "valeur": 2,
-    "src": "cartes/2clubs"
+    "src": "2clubs"
   },
   "3diamonds": {
     "titre": "3 de Carreau",
     "valeur": 3,
-    "src": "cartes/3diamonds"
+    "src": "3diamonds"
   },
   "3spades": {
     "titre": "3 de Pique",
     "valeur": 3,
-    "src": "cartes/3spades"
+    "src": "3spades"
   },
   "3hearts": {
     "titre": "3 de Coeur",
     "valeur": 3,
-    "src": "cartes/3hearts"
+    "src": "3hearts"
   },
   "3clubs": {
     "titre": "3 de Trefle",
     "valeur": 3,
-    "src": "cartes/3clubs"
+    "src": "3clubs"
   },
   "4diamonds": {
     "titre": "4 de Carreau",
     "valeur": 4,
-    "src": "cartes/4diamonds"
+    "src": "4diamonds"
   },
   "4spades": {
     "titre": "4 de Pique",
     "valeur": 4,
-    "src": "cartes/4spades"
+    "src": "4spades"
   },
   "4hearts": {
     "titre": "4 de Coeur",
     "valeur": 4,
-    "src": "cartes/4hearts"
+    "src": "4hearts"
   },
   "4clubs": {
     "titre": "4 de Trefle",
     "valeur": 4,
-    "src": "cartes/4clubs"
+    "src": "4clubs"
   },
   "5diamonds": {
     "titre": "5 de Carreau",
     "valeur": 5,
-    "src": "cartes/5diamonds"
+    "src": "5diamonds"
   },
   "5spades": {
     "titre": "5 de Pique",
     "valeur": 5,
-    "src": "cartes/5spades"
+    "src": "5spades"
   },
   "5hearts": {
     "titre": "5 de Coeur",
     "valeur": 5,
-    "src": "cartes/5hearts"
+    "src": "5hearts"
   },
   "5clubs": {
     "titre": "5 de Trefle",
     "valeur": 5,
-    "src": "cartes/5clubs"
+    "src": "5clubs"
   },
   "6diamonds": {
     "titre": "6 de Carreau",
     "valeur": 6,
-    "src": "cartes/6diamonds"
+    "src": "6diamonds"
   },
   "6spades": {
     "titre": "6 de Pique",
     "valeur": 6,
-    "src": "cartes/6spades"
+    "src": "6spades"
   },
   "6hearts": {
     "titre": "6 de Coeur",
     "valeur": 6,
-    "src": "cartes/6hearts"
+    "src": "6hearts"
   },
   "6clubs": {
     "titre": "6 de Trefle",
     "valeur": 6,
-    "src": "cartes/6clubs"
+    "src": "6clubs"
   },
   "7diamonds": {
     "titre": "7 de Carreau",
     "valeur": 7,
-    "src": "cartes/7diamonds"
+    "src": "7diamonds"
   },
   "7spades": {
     "titre": "7 de Pique",
     "valeur": 7,
-    "src": "cartes/7spades"
+    "src": "7spades"
   },
   "7hearts": {
     "titre": "7 de Coeur",
     "valeur": 7,
-    "src": "cartes/7hearts"
+    "src": "7hearts"
   },
   "7clubs": {
     "titre": "7 de Trefle",
     "valeur": 7,
-    "src": "cartes/7clubs"
+    "src": "7clubs"
   },
   "8diamonds": {
     "titre": "8 de Carreau",
     "valeur": 8,
-    "src": "cartes/8diamonds"
+    "src": "8diamonds"
   },
   "8spades": {
     "titre": "8 de Pique",
     "valeur": 8,
-    "src": "cartes/8spades"
+    "src": "8spades"
   },
   "8hearts": {
     "titre": "8 de Coeur",
     "valeur": 8,
-    "src": "cartes/8hearts"
+    "src": "8hearts"
   },
   "8clubs": {
     "titre": "8 de Trefle",
     "valeur": 8,
-    "src": "cartes/8clubs"
+    "src": "8clubs"
   },
   "9diamonds": {
     "titre": "9 de Carreau",
     "valeur": 9,
-    "src": "cartes/9diamonds"
+    "src": "9diamonds"
   },
   "9spades": {
     "titre": "9 de Pique",
     "valeur": 9,
-    "src": "cartes/9spades"
+    "src": "9spades"
   },
   "9hearts": {
     "titre": "9 de Coeur",
     "valeur": 9,
-    "src": "cartes/9hearts"
+    "src": "9hearts"
   },
   "9clubs": {
     "titre": "9 de Trefle",
     "valeur": 9,
-    "src": "cartes/9clubs"
+    "src": "9clubs"
   },
   "10diamonds": {
     "titre": "10 de Carreau",
     "valeur": 10,
-    "src": "cartes/10diamonds"
+    "src": "10diamonds"
   },
   "10spades": {
     "titre": "10 de Pique",
     "valeur": 10,
-    "src": "cartes/10spades"
+    "src": "10spades"
   },
   "10hearts": {
     "titre": "10 de Coeur",
     "valeur": 10,
-    "src": "cartes/10hearts"
+    "src": "10hearts"
   },
   "10clubs": {
     "titre": "10 de Trefle",
     "valeur": 10,
-    "src": "cartes/10clubs"
+    "src": "10clubs"
   },
   "Jackdiamonds": {
     "titre": "Valet de Carreau",
     "valeur": 11,
-    "src": "cartes/Jackdiamonds"
+    "src": "Jackdiamonds"
   },
   "Jackspades": {
     "titre": "Valet de Pique",
     "valeur": 11,
-    "src": "cartes/Jackspades"
+    "src": "Jackspades"
   },
   "Jackhearts": {
     "titre": "Valet de Coeur",
     "valeur": 11,
-    "src": "cartes/Jackhearts"
+    "src": "Jackhearts"
   },
   "Jackclubs": {
     "titre": "Valet de Trefle",
     "valeur": 11,
-    "src": "cartes/Jackclubs"
+    "src": "Jackclubs"
   },
   "Queendiamonds": {
     "titre": "Reine de Carreau",
     "valeur": 12,
-    "src": "cartes/Queendiamonds"
+    "src": "Queendiamonds"
   },
   "Queenspades": {
     "titre": "Reine de Pique",
     "valeur": 12,
-    "src": "cartes/Queenspades"
+    "src": "Queenspades"
   },
   "Queenhearts": {
     "titre": "Reine de Coeur",
     "valeur": 12,
-    "src": "cartes/Queenhearts"
+    "src": "Queenhearts"
   },
   "Queenclubs": {
     "titre": "Reine de Trefle",
     "valeur": 12,
-    "src": "cartes/Queenclubs"
+    "src": "Queenclubs"
   },
   "Kingdiamonds": {
     "titre": "Roi de Carreau",
     "valeur": 13,
-    "src": "cartes/Kingdiamonds"
+    "src": "Kingdiamonds"
   },
   "Kingspades": {
     "titre": "Roi de Pique",
     "valeur": 13,
-    "src": "cartes/Kingspades"
+    "src": "Kingspades"
   },
   "Kinghearts": {
     "titre": "Roi de Coeur",
     "valeur": 13,
-    "src": "cartes/Kinghearts"
+    "src": "Kinghearts"
   },
   "Kingclubs": {
     "titre": "Roi de Trefle",
     "valeur": 13,
-    "src": "cartes/Kingclubs"
+    "src": "Kingclubs"
   }
 }

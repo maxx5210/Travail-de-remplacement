@@ -146,7 +146,7 @@ reveler.onclick = function() {
   player1click = true;
   reveler.classList.add('disabled');
   reserve.push(player1card);
-  carte1.src = draw['src'] + ".svg";
+  carte1.src = "cartes/" + draw['src'] + ".svg";
   carte1.alt = draw;
 
   if (paquet1.length === 0) {
@@ -161,7 +161,7 @@ devoiler.onclick = function() {
   player2click = true;
   devoiler.classList.add('disabled');
   reserve.push(player2card);
-  carte2.src = draw['src'] + ".svg";
+  carte2.src = "cartes/" + draw['src'] + ".svg";
   carte2.alt = draw;
 
   if (paquet2.length === 0) {
