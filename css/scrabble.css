@@ -1,0 +1,24 @@
+.absolute {
+position: absolute;
+}
+
+.top{
+  top: 50%;
+}
+
+#bas {
+  bottom:0px;
+}
+
+#gauche {
+  left: 0px;
+}
+
+#droite {
+  right: 0px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}

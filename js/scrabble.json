@@ -1,0 +1,132 @@
+{
+  "A": {
+    "titre": "Lettre A",
+    "valeur": 1,
+    "src": "a"
+  },
+  "B": {
+    "titre": "Lettre B",
+    "valeur": 3,
+    "src": "b"
+  },
+  "C": {
+    "titre": "Lettre C",
+    "valeur": 3,
+    "src": "c"
+  },
+  "D": {
+    "titre": "Lettre D",
+    "valeur": 2,
+    "src": "d"
+  },
+  "E": {
+    "titre": "Lettre E",
+    "valeur": 1,
+    "src": "e"
+  },
+  "F": {
+    "titre": "Lettre F",
+    "valeur": 4,
+    "src": "f"
+  },
+  "G": {
+    "titre": "Lettre G",
+    "valeur": 2,
+    "src": "g"
+  },
+  "H": {
+    "titre": "Lettre H",
+    "valeur": 4,
+    "src": "h"
+  },
+  "I": {
+    "titre": "Lettre I",
+    "valeur": 1,
+    "src": "i"
+  },
+  "J": {
+    "titre": "Lettre J",
+    "valeur": 8,
+    "src": "j"
+  },
+  "K": {
+    "titre": "Lettre K",
+    "valeur": 10,
+    "src": "k"
+  },
+  "L": {
+    "titre": "Lettre L",
+    "valeur": 1,
+    "src": "l"
+  },
+  "M": {
+    "titre": "Lettre M",
+    "valeur": 2,
+    "src": "m"
+  },
+  "N": {
+    "titre": "Lettre N",
+    "valeur": 1,
+    "src": "n"
+  },
+  "O": {
+    "titre": "Lettre O",
+    "valeur": 1,
+    "src": "o"
+  },
+  "P": {
+    "titre": "Lettre P",
+    "valeur": 3,
+    "src": "p"
+  },
+  "Q": {
+    "titre": "Lettre Q",
+    "valeur": 8,
+    "src": "q"
+  },
+  "R": {
+    "titre": "Lettre R",
+    "valeur": 1,
+    "src": "r"
+  },
+  "S": {
+    "titre": "Lettre S",
+    "valeur": 1,
+    "src": "s"
+  },
+  "T": {
+    "titre": "Lettre T",
+    "valeur": 1,
+    "src": "t"
+  },
+  "U": {
+    "titre": "Lettre U",
+    "valeur": 1,
+    "src": "u"
+  },
+  "V": {
+    "titre": "Lettre V",
+    "valeur": 4,
+    "src": "v"
+  },
+  "W": {
+    "titre": "Lettre W",
+    "valeur": 10,
+    "src": "w"
+  },
+  "X": {
+    "titre": "Lettre X",
+    "valeur": 10,
+    "src": "x"
+  },
+  "Y": {
+    "titre": "Lettre Y",
+    "valeur": 10,
+    "src": "y"
+  },
+  "Z": {
+    "titre": "Lettre Z",
+    "valeur": 10,
+    "src": "z"
+  },
+}
