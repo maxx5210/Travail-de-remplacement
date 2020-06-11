@@ -29,76 +29,29 @@ window.onload = function() {
 
 //////////////////////////////////Comparaison//////////////////////////////////
 function comparaison() {
+  console.log(reserve);
   var triche = getComputedStyle(reveler, null).zIndex;
 
   if (player1click === true && player2click === true) {
-
+    console.log(reserve);
     switch (true) {
 
       case player1card['valeur'] > player2card['valeur']:
+      console.log(reserve);
         while (reserve.length > 0) {
+          console.log(reserve);
           melange(paquet1);
-        }
-        if (triche == 2) {
-          carte1.animate([{
-            transform: 'translateY(-24vh)'
-          }], {
-            duration: 1000,
-            iterations: 1
-          });
-          carte2.animate([{
-            transform: 'translateY(-48vh)'
-          }], {
-            duration: 1000,
-            iterations: 1
-          });
-        } else {
-          carte1.animate([{
-            transform: 'translateX(-25vw)'
-          }], {
-            duration: 1000,
-            iterations: 1
-          });
-          carte2.animate([{
-            transform: 'translateX(-49vw)'
-          }], {
-            duration: 1000,
-            iterations: 1
-          });
+          console.log(reserve);
         }
         newturn();
         break;
 
       case player1card['valeur'] < player2card['valeur']:
+      console.log(reserve);
         while (reserve.length > 0) {
+          console.log(reserve);
           melange(paquet2);
-        }
-        if (triche == 2) {
-          carte1.animate([{
-            transform: 'translateY(48vh)'
-          }], {
-            duration: 1000,
-            iterations: 1
-          });
-          carte2.animate([{
-            transform: 'translateY(24vh)'
-          }], {
-            duration: 1000,
-            iterations: 1
-          });
-        } else {
-          carte1.animate([{
-            transform: 'translateX(49vw)'
-          }], {
-            duration: 1000,
-            iterations: 1
-          });
-          carte2.animate([{
-            transform: 'translateX(25vw)'
-          }], {
-            duration: 1000,
-            iterations: 1
-          });
+          console.log(reserve);
         }
         newturn();
         break;
@@ -119,8 +72,10 @@ function comparaison() {
         alert("Erreur FATALE ! (Comment ta fait ça Billy ? Sérieusement ?)")
     }
   }
+  console.log(reserve);
   nbrcart1.innerHTML = "Nombre de cartes : " + paquet1.length;
   nbrcart2.innerHTML = "Nombre de cartes : " + paquet2.length;
+  console.log(reserve);
 }
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -147,7 +102,7 @@ reveler.onclick = function() {
   reveler.classList.add('disabled');
   reserve.push(player1card);
   carte1.src = "cartes/" + draw['src'] + ".svg";
-  carte1.alt = draw;
+  carte1.alt = draw['src'];
 
   if (paquet1.length === 0) {
     alert("Le Joueur 1 a remporté la partie");
@@ -162,11 +117,12 @@ devoiler.onclick = function() {
   devoiler.classList.add('disabled');
   reserve.push(player2card);
   carte2.src = "cartes/" + draw['src'] + ".svg";
-  carte2.alt = draw;
+  carte2.alt = draw['src'];
 
   if (paquet2.length === 0) {
     alert("Le Joueur 2 a remporté la partie");
   }
+  console.log(reserve);
   comparaison();
 }
 ///////////////////////////////////////////////////////////////////////////////
@@ -174,7 +130,7 @@ devoiler.onclick = function() {
 
 //////////////////////////////////Initialisation////////////////////////////////
 function playstart() {
-  for (let i = 1; i <= 26; i++) {
+  for (let i = 0; i <= 25; i++) {
     melange(paquet1);
     melange(paquet2);
   }
