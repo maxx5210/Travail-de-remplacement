@@ -19,6 +19,10 @@ function create() {
   }
 }
 
+function join() {
+  console.log(event.target.value);
+}
+
 function lobby(jeu, nom) {
   var req = createHttpRequest();
   req.onreadystatechange = function() {
