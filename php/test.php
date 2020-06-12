@@ -2,17 +2,13 @@
 include_once('includes/garbage.php');
 include_once('includes/refresh.php');
 
-$req = $bdd->prepare("SELECT * FROM sessions") or die('Erreur');
-$req->execute();
-$rep = $req->fetchAll();
-echo "Personnes en ligne";
-echo "<br>";
-echo "<ul>";
+$player = $bdd->prepare("SELECT * FROM bataille WHERE idB = ?");
+$player->execute(array($_SESSION['gid']));
+$playerrep = $player->fetchAll();
 
-foreach ($rep as $key => $value) {
-
-echo "<li>".$value['user']."</li>";
+foreach ($playerrep as $key => $value) {
+  echo "Joueur 1 : ".$value['J1'];
+  echo "<br>";
+  echo "Joueur 2 : ".$value['J2'];
 }
-echo "</ul>";
-count($rep);
 ?>

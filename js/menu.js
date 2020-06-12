@@ -1,4 +1,6 @@
 var obj;
+var gameid;
+
 window.onload = function() {
   afficher();
 }
@@ -19,10 +21,6 @@ function create() {
   }
 }
 
-function join() {
-  console.log(event.target.value);
-}
-
 function lobby(jeu, nom) {
   var req = createHttpRequest();
   req.onreadystatechange = function() {
@@ -36,13 +34,37 @@ function lobby(jeu, nom) {
   req.send("jeu=" + jeu + "&nom=" + nom);
   setTimeout(function() {
     if (req.responseText.includes("oui") == true) {
-      alert("Salle créée");
+      alert("Salle crée");
+      document.location.href = "session.html";
     } else if (req.responseText.includes("exist") == true) {
       alert("Une salle avec le même nom existe déjà");
     } else {
       alert("Erreur fatale !");
     }
-  }, 1000);
+  }, 500);
+}
+
+function list() {
+  gameid = event.target.value;
+  console.log(gameid);
+  var req = createHttpRequest();
+  req.onreadystatechange = function() {
+    if (req.status == 200) {
+      console.log(req.status);
+      console.log(req.respondetext);
+    }
+  }
+  req.open("POST", "php/joingame.php", true);
+  req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  req.send("gameid=" + gameid);
+  setTimeout(function() {
+    if (req.responseText.includes("oui") == true) {
+      alert("dfnsdjkfs");
+      document.location.href = "session.html";
+    } else {
+      alert("Erreur de merde !!!!!!!");
+    }
+  }, 500);
 }
 
 function afficher() {
@@ -56,9 +78,9 @@ function afficher() {
   }
   req.open("POST", "php/showlobby.php", true);
   req.send();
-  setTimeout(function () {
-document.getElementById('lobbys').innerHTML = req.responseText;
-  }, 1000);
+  setTimeout(function() {
+    document.getElementById('lobbys').innerHTML = req.responseText;
+  }, 500);
 }
 
 function createHttpRequest() {
