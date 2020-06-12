@@ -4,10 +4,60 @@
     "valeur": 1,
     "src": "a"
   },
+  "A": {
+    "titre": "Lettre A",
+    "valeur": 1,
+    "src": "a"
+  },
+  "A": {
+    "titre": "Lettre A",
+    "valeur": 1,
+    "src": "a"
+  },
+  "A": {
+    "titre": "Lettre A",
+    "valeur": 1,
+    "src": "a"
+  },
+  "A": {
+    "titre": "Lettre A",
+    "valeur": 1,
+    "src": "a"
+  },
+  "A": {
+    "titre": "Lettre A",
+    "valeur": 1,
+    "src": "a"
+  },
+  "A": {
+    "titre": "Lettre A",
+    "valeur": 1,
+    "src": "a"
+  },
+  "A": {
+    "titre": "Lettre A",
+    "valeur": 1,
+    "src": "a"
+  },
+  "A": {
+    "titre": "Lettre A",
+    "valeur": 1,
+    "src": "a"
+  },
   "B": {
     "titre": "Lettre B",
     "valeur": 3,
     "src": "b"
+  },
+  "B": {
+    "titre": "Lettre B",
+    "valeur": 3,
+    "src": "b"
+  },
+  "C": {
+    "titre": "Lettre C",
+    "valeur": 3,
+    "src": "c"
   },
   "C": {
     "titre": "Lettre C",
@@ -19,10 +69,95 @@
     "valeur": 2,
     "src": "d"
   },
+  "D": {
+    "titre": "Lettre D",
+    "valeur": 2,
+    "src": "d"
+  },
+  "D": {
+    "titre": "Lettre D",
+    "valeur": 2,
+    "src": "d"
+  },
   "E": {
     "titre": "Lettre E",
     "valeur": 1,
     "src": "e"
+  },
+  "E": {
+    "titre": "Lettre E",
+    "valeur": 1,
+    "src": "e"
+  },
+  "E": {
+    "titre": "Lettre E",
+    "valeur": 1,
+    "src": "e"
+  },
+  "E": {
+    "titre": "Lettre E",
+    "valeur": 1,
+    "src": "e"
+  },
+  "E": {
+    "titre": "Lettre E",
+    "valeur": 1,
+    "src": "e"
+  },
+  "E": {
+    "titre": "Lettre E",
+    "valeur": 1,
+    "src": "e"
+  },
+  "E": {
+    "titre": "Lettre E",
+    "valeur": 1,
+    "src": "e"
+  },
+  "E": {
+    "titre": "Lettre E",
+    "valeur": 1,
+    "src": "e"
+  },
+  "E": {
+    "titre": "Lettre E",
+    "valeur": 1,
+    "src": "e"
+  },
+  "E": {
+    "titre": "Lettre E",
+    "valeur": 1,
+    "src": "e"
+  },
+  "E": {
+    "titre": "Lettre E",
+    "valeur": 1,
+    "src": "e"
+  },
+  "E": {
+    "titre": "Lettre E",
+    "valeur": 1,
+    "src": "e"
+  },
+  "E": {
+    "titre": "Lettre E",
+    "valeur": 1,
+    "src": "e"
+  },
+  "E": {
+    "titre": "Lettre E",
+    "valeur": 1,
+    "src": "e"
+  },
+  "E": {
+    "titre": "Lettre E",
+    "valeur": 1,
+    "src": "e"
+  },
+  "F": {
+    "titre": "Lettre F",
+    "valeur": 4,
+    "src": "f"
   },
   "F": {
     "titre": "Lettre F",
@@ -34,10 +169,55 @@
     "valeur": 2,
     "src": "g"
   },
+  "G": {
+    "titre": "Lettre G",
+    "valeur": 2,
+    "src": "g"
+  },
   "H": {
     "titre": "Lettre H",
     "valeur": 4,
     "src": "h"
+  },
+  "H": {
+    "titre": "Lettre H",
+    "valeur": 4,
+    "src": "h"
+  },
+  "I": {
+    "titre": "Lettre I",
+    "valeur": 1,
+    "src": "i"
+  },
+  "I": {
+    "titre": "Lettre I",
+    "valeur": 1,
+    "src": "i"
+  },
+  "I": {
+    "titre": "Lettre I",
+    "valeur": 1,
+    "src": "i"
+  },
+  "I": {
+    "titre": "Lettre I",
+    "valeur": 1,
+    "src": "i"
+  },
+  "I": {
+    "titre": "Lettre I",
+    "valeur": 1,
+    "src": "i"
+  },
+  "I": {
+    "titre": "Lettre I",
+    "valeur": 1,
+    "src": "i"
+  },
+  "I": {
+    "titre": "Lettre I",
+    "valeur": 1,
+    "src": "i"
   },
   "I": {
     "titre": "Lettre I",
@@ -59,6 +239,36 @@
     "valeur": 1,
     "src": "l"
   },
+  "L": {
+    "titre": "Lettre L",
+    "valeur": 1,
+    "src": "l"
+  },
+  "L": {
+    "titre": "Lettre L",
+    "valeur": 1,
+    "src": "l"
+  },
+  "L": {
+    "titre": "Lettre L",
+    "valeur": 1,
+    "src": "l"
+  },
+  "L": {
+    "titre": "Lettre L",
+    "valeur": 1,
+    "src": "l"
+  },
+  "M": {
+    "titre": "Lettre M",
+    "valeur": 2,
+    "src": "m"
+  },
+  "M": {
+    "titre": "Lettre M",
+    "valeur": 2,
+    "src": "m"
+  },
   "M": {
     "titre": "Lettre M",
     "valeur": 2,
@@ -69,10 +279,65 @@
     "valeur": 1,
     "src": "n"
   },
+  "N": {
+    "titre": "Lettre N",
+    "valeur": 1,
+    "src": "n"
+  },
+  "N": {
+    "titre": "Lettre N",
+    "valeur": 1,
+    "src": "n"
+  },
+  "N": {
+    "titre": "Lettre N",
+    "valeur": 1,
+    "src": "n"
+  },
+  "N": {
+    "titre": "Lettre N",
+    "valeur": 1,
+    "src": "n"
+  },
+  "N": {
+    "titre": "Lettre N",
+    "valeur": 1,
+    "src": "n"
+  },
   "O": {
     "titre": "Lettre O",
     "valeur": 1,
     "src": "o"
+  },
+  "O": {
+    "titre": "Lettre O",
+    "valeur": 1,
+    "src": "o"
+  },
+  "O": {
+    "titre": "Lettre O",
+    "valeur": 1,
+    "src": "o"
+  },
+  "O": {
+    "titre": "Lettre O",
+    "valeur": 1,
+    "src": "o"
+  },
+  "O": {
+    "titre": "Lettre O",
+    "valeur": 1,
+    "src": "o"
+  },
+  "O": {
+    "titre": "Lettre O",
+    "valeur": 1,
+    "src": "o"
+  },
+  "P": {
+    "titre": "Lettre P",
+    "valeur": 3,
+    "src": "p"
   },
   "P": {
     "titre": "Lettre P",
@@ -89,6 +354,56 @@
     "valeur": 1,
     "src": "r"
   },
+  "R": {
+    "titre": "Lettre R",
+    "valeur": 1,
+    "src": "r"
+  },
+  "R": {
+    "titre": "Lettre R",
+    "valeur": 1,
+    "src": "r"
+  },
+  "R": {
+    "titre": "Lettre R",
+    "valeur": 1,
+    "src": "r"
+  },
+  "R": {
+    "titre": "Lettre R",
+    "valeur": 1,
+    "src": "r"
+  },
+  "R": {
+    "titre": "Lettre R",
+    "valeur": 1,
+    "src": "r"
+  },
+  "S": {
+    "titre": "Lettre S",
+    "valeur": 1,
+    "src": "s"
+  },
+  "S": {
+    "titre": "Lettre S",
+    "valeur": 1,
+    "src": "s"
+  },
+  "S": {
+    "titre": "Lettre S",
+    "valeur": 1,
+    "src": "s"
+  },
+  "S": {
+    "titre": "Lettre S",
+    "valeur": 1,
+    "src": "s"
+  },
+  "S": {
+    "titre": "Lettre S",
+    "valeur": 1,
+    "src": "s"
+  },
   "S": {
     "titre": "Lettre S",
     "valeur": 1,
@@ -99,10 +414,65 @@
     "valeur": 1,
     "src": "t"
   },
+  "T": {
+    "titre": "Lettre T",
+    "valeur": 1,
+    "src": "t"
+  },
+  "T": {
+    "titre": "Lettre T",
+    "valeur": 1,
+    "src": "t"
+  },
+  "T": {
+    "titre": "Lettre T",
+    "valeur": 1,
+    "src": "t"
+  },
+  "T": {
+    "titre": "Lettre T",
+    "valeur": 1,
+    "src": "t"
+  },
+  "T": {
+    "titre": "Lettre T",
+    "valeur": 1,
+    "src": "t"
+  },
   "U": {
     "titre": "Lettre U",
     "valeur": 1,
     "src": "u"
+  },
+  "U": {
+    "titre": "Lettre U",
+    "valeur": 1,
+    "src": "u"
+  },
+  "U": {
+    "titre": "Lettre U",
+    "valeur": 1,
+    "src": "u"
+  },
+  "U": {
+    "titre": "Lettre U",
+    "valeur": 1,
+    "src": "u"
+  },
+  "U": {
+    "titre": "Lettre U",
+    "valeur": 1,
+    "src": "u"
+  },
+  "U": {
+    "titre": "Lettre U",
+    "valeur": 1,
+    "src": "u"
+  },
+  "V": {
+    "titre": "Lettre V",
+    "valeur": 4,
+    "src": "v"
   },
   "V": {
     "titre": "Lettre V",
@@ -128,5 +498,5 @@
     "titre": "Lettre Z",
     "valeur": 10,
     "src": "z"
-  },
+  }
 }

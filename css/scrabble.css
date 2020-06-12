@@ -1,13 +1,28 @@
-.absolute {
-position: absolute;
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #01955E;
 }
 
 .top{
-  top: 50%;
+  height: 100%;
+  position: absolute;
+}
+
+.ligne {
+  display: flex;
+  justify-content: center;
+}
+
+.colone{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #bas {
   bottom:0px;
+  position: absolute;
 }
 
 #gauche {
@@ -16,9 +31,4 @@ position: absolute;
 
 #droite {
   right: 0px;
-}
-
-body {
-  display: flex;
-  justify-content: center;
 }
