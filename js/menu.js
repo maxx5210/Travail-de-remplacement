@@ -33,13 +33,18 @@ function lobby(jeu, nom) {
   req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   req.send("jeu=" + jeu + "&nom=" + nom);
   setTimeout(function() {
-    if (req.responseText.includes("oui") == true) {
-      alert("Salle crée");
-      document.location.href = "session.html";
-    } else if (req.responseText.includes("exist") == true) {
-      alert("Une salle avec le même nom existe déjà");
-    } else {
-      alert("Erreur fatale !");
+    switch (true) {
+      case req.responseText.includes("test") == true:
+        alert("Salle créée");
+        document.location.href = "session.html";
+        break;
+      case req.responseText.includes("bataille") == true:
+        alert("Salle créée");
+        document.location.href = "bataille.html";
+        break;
+      default:
+        alert("ERREUR");
+        break;
     }
   }, 500);
 }
@@ -58,11 +63,18 @@ function list() {
   req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   req.send("gameid=" + gameid);
   setTimeout(function() {
-    if (req.responseText.includes("oui") == true) {
-      alert("dfnsdjkfs");
-      document.location.href = "session.html";
-    } else {
-      alert("Erreur de merde !!!!!!!");
+    switch (true) {
+      case req.responseText.includes("test"):
+        alert("Rejoindre le test");
+        document.location.href = "session.html";
+        break;
+      case req.responseText.includes("bataille"):
+        alert("Salle rejointe");
+        document.location.href = "bataille.html";
+        break;
+      default:
+        alert("Erreur !!!!!!");
+        break;
     }
   }, 500);
 }

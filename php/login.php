@@ -18,8 +18,8 @@ if (empty($rep)) {
     session_start();
     $_SESSION['user'] = $user;
     $data = session_encode();
-    $req2 = $bdd->prepare("INSERT INTO `sessions`(`sess_id`, `user`, `access`, `data`) VALUES (?,?,?,?)");
-    $req2->execute(array(session_id() ,$user, date("Y-d-m H:i:s"),$data));
+    $req2 = $bdd->prepare("INSERT INTO `sessions`(`sess_id`, `user`, `data`) VALUES (?,?,?)");
+    $req2->execute(array(session_id() ,$user,$data));
     echo "oui";
 }
 ?>

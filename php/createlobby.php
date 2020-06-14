@@ -16,13 +16,16 @@ if (isset($checkresult)) {
       $save->execute(array($nom, $jeu));
       $saveres = $save->fetch();
       $_SESSION['gid'] = $saveres[0];
-      print_r($saveres);
 
       if ($jeu == "test") {
         $ult = $bdd->prepare("INSERT INTO bataille (idB, nom, J1) VALUES(?,?,?)");
         $ult->execute(array($_SESSION['gid'], $nom, $_SESSION['user']));
+        echo "test";
+      } else if ($jeu == "bataille") {
+        $ult = $bdd->prepare("INSERT INTO bataille (idB, nom, J1) VALUES(?,?,?)");
+        $ult->execute(array($_SESSION['gid'], $nom, $_SESSION['user']));
+        echo "bataille";
       }
-      echo "oui";
   } else {
   echo "exist";
 }

@@ -9,13 +9,22 @@ if (isset($_POST['gameid'])) {
 }
 $_SESSION['gid'] = $gameid;
 
-$insert = $bdd->prepare("UPDATE bataille SET J2 = ? WHERE idB = ?");
-$insert->execute(array($_SESSION['user'], $gameid));
+$select = $bdd->prepare("SELECT * from lobby WHERE id = ?");
+$select->execute(array($gameid));
+$selectrep = $select->fetchAll();
 
-if (true) {
-  echo "oui";
-} else {
-  echo "non";
+foreach ($selectrep as $key => $value) {
+  if ($value['jeu'] == "bataille") {
+    echo "bataille";
+    $insert = $bdd->prepare("UPDATE bataille SET J2 = ? WHERE idB = ?");
+    $insert->execute(array($_SESSION['user'], $gameid));
+  } else if ($value['jeu'] == "test") {
+    echo "test";
+    $insert = $bdd->prepare("UPDATE bataille SET J2 = ? WHERE idB = ?");
+    $insert->execute(array($_SESSION['user'], $gameid));
+  }
 }
+
+
 
 ?>
