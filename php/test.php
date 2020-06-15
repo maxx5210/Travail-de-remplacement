@@ -1,14 +1,18 @@
 <?php
+//Sert à envoyer l'information des joueurs connecté dans la session depuis la base de donnée pour l'afficher dans le lobby.
 include_once('includes/garbage.php');
 include_once('includes/refresh.php');
 
-$player = $bdd->prepare("SELECT * FROM bataille WHERE idB = ?");
-$player->execute(array($_SESSION['gid']));
-$playerrep = $player->fetchAll();
+if ($_SESSION['game'] == "bataille") {
+  $player = $bdd->prepare("SELECT * FROM bataille WHERE idB = ?");
+  $player->execute(array($_SESSION['gid']));
+  $playerrep = $player->fetchAll();
 
-foreach ($playerrep as $key => $value) {
-  echo "Joueur 1 : ".$value['J1'];
-  echo "<br>";
-  echo "Joueur 2 : ".$value['J2'];
+  foreach ($playerrep as $key => $value) {
+    $tableau = array("game" => "bataille", "J1" => $value["J1"], "J2" => $value["J2"], "J1Status" => $value["J1Status"], "J2Status" => $value["J2Status"]);
+  }
 }
+
+echo json_encode($tableau);
+
 ?>

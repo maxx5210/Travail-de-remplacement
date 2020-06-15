@@ -2,6 +2,7 @@
 <html lang="fr" dir="ltr">
 
 <head>
+  <link rel="stylesheet" href="css/session.css">
   <script src="js/session.js" charset="utf-8"></script>
   <meta charset="utf-8">
 
@@ -28,13 +29,38 @@
 </head>
 
 <body>
-  <div id="players">
-
+  <div>
+    <span id="P1">
+    </span>
+    <span id="P1Status" class="ready">
+    </span>
   </div>
+
+  <div>
+    <span id="P2">
+    </span>
+    <span id="P2Status" class="ready">
+    </span>
+  </div>
+
+  <div>
+    <span id="P3">
+    </span>
+    <span id="P3Status" class="ready">
+    </span>
+  </div>
+
+  <div>
+    <span id="P4">
+    </span>
+    <span id="P4Status" class="ready">
+    </span>
+  </div>
+
   <div id="result">
-
   </div>
-  <button type="button" id="button" onclick="change();">Démarrer</button>
+  <button type="button" name="button" onclick="toggleready();">Prêt / Pas Prêt</button>
+  <button type="button" id="button" onclick="change();">Démarrer la partie</button>
 </body>
 
 </html>

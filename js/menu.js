@@ -3,6 +3,9 @@ var gameid;
 
 window.onload = function() {
   afficher();
+  setInterval(function() {
+    afficher();
+  }, 5000);
 }
 
 function menu() {
@@ -34,13 +37,13 @@ function lobby(jeu, nom) {
   req.send("jeu=" + jeu + "&nom=" + nom);
   setTimeout(function() {
     switch (true) {
-      case req.responseText.includes("test") == true:
+      case req.responseText.includes("oui") == true:
         alert("Salle créée");
         document.location.href = "session.html";
         break;
-      case req.responseText.includes("bataille") == true:
-        alert("Salle créée");
-        document.location.href = "bataille.html";
+
+      case req.responseText.includes("exist") == true:
+        alert("Le nom de la Salle existe déjà");
         break;
       default:
         alert("ERREUR");
@@ -64,14 +67,11 @@ function list() {
   req.send("gameid=" + gameid);
   setTimeout(function() {
     switch (true) {
-      case req.responseText.includes("test"):
-        alert("Rejoindre le test");
+      case req.responseText.includes("oui") == true:
+        alert("Salle rejointe");
         document.location.href = "session.html";
         break;
-      case req.responseText.includes("bataille"):
-        alert("Salle rejointe");
-        document.location.href = "bataille.html";
-        break;
+
       default:
         alert("Erreur !!!!!!");
         break;
@@ -92,7 +92,7 @@ function afficher() {
   req.send();
   setTimeout(function() {
     document.getElementById('lobbys').innerHTML = req.responseText;
-  }, 500);
+  }, 300);
 }
 
 function createHttpRequest() {

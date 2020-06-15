@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 12 juin 2020 à 15:22
+-- Généré le :  lun. 15 juin 2020 à 13:17
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `pierrot48u_onlinegames`
+-- Base de données :  `tut19belote_onlinegames`
 --
 
 -- --------------------------------------------------------
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `bataille` (
   `idB` int(11) NOT NULL,
   `nom` text NOT NULL,
   `J1` text NOT NULL,
-  `J1Status` tinyint(1) NOT NULL DEFAULT '1',
+  `J1Status` tinyint(1) NOT NULL DEFAULT '0',
   `J2` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `J2Status` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idB`)
@@ -79,7 +79,7 @@ DROP TABLE IF EXISTS `sessions`;
 CREATE TABLE IF NOT EXISTS `sessions` (
   `sess_id` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `user` text NOT NULL,
-  `access` timestamp NOT NULL,
+  `access` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `data` text NOT NULL,
   PRIMARY KEY (`sess_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

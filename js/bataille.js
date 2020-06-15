@@ -24,8 +24,8 @@ var reserve = [
 
 window.onload = function() {
   getjson();
+  prepare();
 }
-
 
 //////////////////////////////////Comparaison//////////////////////////////////
 function comparaison() {
@@ -34,7 +34,8 @@ function comparaison() {
 
       case player1card['valeur'] > player2card['valeur']:
         while (reserve.length > 0) {
-          melange(paquet1);
+          input.push(reserve[0]);
+          reserve.splice(0, 1);
         }
         newturn();
         break;
@@ -42,7 +43,8 @@ function comparaison() {
       case player1card['valeur'] < player2card['valeur']:
 
         while (reserve.length > 0) {
-          melange(paquet2);
+          input.push(reserve[0]);
+          reserve.splice(0, 1);
         }
         newturn();
         break;
@@ -118,12 +120,8 @@ devoiler.onclick = function() {
 //////////////////////////////////Initialisation////////////////////////////////
 function playstart() {
   for (let i = 0; i <= 25; i++) {
-    let rand = getRandomInt();
-    paquet1.push(obj[reserve[rand]]);
-    reserve.splice(rand, 1);
-    rand = getRandomInt();
-    paquet2.push(obj[reserve[rand]]);
-    reserve.splice(rand, 1);
+    melange(input1);
+    melange(input2);
   }
 }
 ///////////////////////////////////////////////////////////////////////////////
@@ -132,20 +130,14 @@ function playstart() {
 ////////////////////////////////////Mélange////////////////////////////////////
 function melange(input) {
   let rand = getRandomInt();
-  input.push(reserve[rand]);
+  input.push(obj[reserve[rand]]);
   reserve.splice(rand, 1);
 }
 ///////////////////////////////////////////////////////////////////////////////
 
-
 function getRandomInt() {
   return Math.floor(Math.random() * Math.floor(reserve.length));
 }
-
-
-
-
-
 
 
 /////////////////////////////////////AJAX//////////////////////////////////////
@@ -184,11 +176,26 @@ function getjson() {
   req.send();
   setTimeout(function() {
     obj = JSON.parse(obj);
-    playstart();
     reveler.classList.remove('disabled');
     devoiler.classList.remove('disabled');
   }, 1000);
 }
 ///////////////////////////////////////////////////////////////////////////////
+
+function prepare() {
+  var req = createHttpRequest();
+  req.onreadystatechange = function() {
+    if (req.status == 200) {
+      console.log("Status de la requête PHP Prepare : ", req.status);
+    }
+  }
+  req.open("POST", "php/preparebataille.php", true);
+  req.send();
+  if (req.responseText.includes("oui") == true) {
+    reveler.classList.remove('disabled');
+  } else if (req.responseText.includes("non") == true) {
+    devoiler.classList.remove('disabled');
+  }
+}
 
 ///////////////////////////////////////////////////////////////////////////////

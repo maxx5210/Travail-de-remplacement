@@ -1,43 +1,12 @@
 var obj;
-var obj2;
+var balance = true;
+
 window.onload = function() {
   document.getElementById('button').disabled = true;
-  get();
-
   setInterval(function() {
-    refresh();
-  }, 1000);
-}
-
-function refresh() {
-  var req = createHttpRequest();
-  req.onreadystatechange = function() {
-    if (req.status == 200) {
-      console.log(req.status);
-      console.log(req.responseText);
-      obj2 = req.responseText;
-    }
-  }
-  req.open("POST", "php/bataille.php", true);
-  req.send();
-  setTimeout(function() {
-    console.log("actu");
-    if (obj2.includes("oui") == true) {
-      document.getElementById('button').disabled = false;
-    }
-  }, 300);
-}
-
-function change(){
-  document.getElementById('button').disabled = true;
-  var req = createHttpRequest();
-  req.onreadystatechange = function() {
-    if (req.status == 200) {
-      console.log(req.status);
-    }
-  }
-  req.open("POST", "php/change.php", true);
-  req.send();
+    get();
+    checkready();
+  }, 2000);
 }
 
 function get() {
@@ -51,8 +20,75 @@ function get() {
   req.open("POST", "php/test.php", true);
   req.send();
   setTimeout(function() {
-    document.getElementById('players').innerHTML = obj;
-  }, 1000);
+    obj = JSON.parse(obj);
+    switch (obj['game']) {
+      case "bataille":
+        document.getElementById('P1').innerHTML = "Joueur 1 : " + obj['J1'];
+        document.getElementById('P2').innerHTML = "Joueur 2 : " + obj['J2'];
+        if (obj["J1Status"] == "1") {
+          document.getElementById('P1Status').innerHTML = "Prêt";
+          document.getElementById('P1Status').style.color = "green";
+          document.getElementById('P1Status').style.border = "1px solid green";
+        } else {
+          document.getElementById('P1Status').innerHTML = "Pas prêt";
+          document.getElementById('P1Status').style.color = "red";
+          document.getElementById('P1Status').style.border = "1px solid red";
+        }
+        if (obj["J2Status"] == "1") {
+          document.getElementById('P2Status').innerHTML = "Prêt";
+          document.getElementById('P2Status').style.color = "green";
+          document.getElementById('P2Status').style.border = "1px solid green";
+        } else {
+          document.getElementById('P2Status').innerHTML = "Pas prêt";
+          document.getElementById('P2Status').style.color = "red";
+          document.getElementById('P2Status').style.border = "1px solid red";
+        }
+        if (balance == true) {
+          document.getElementById('P3').remove();
+          document.getElementById('P3Status').remove();
+          document.getElementById('P4').remove();
+          document.getElementById('P4Status').remove();
+          balance = false;
+        }
+        break;
+      default:
+        break;
+    }
+  }, 500);
+}
+
+function checkready() {
+  var req = createHttpRequest();
+  req.onreadystatechange = function() {
+    if (req.status == 200) {
+      console.log(req.status);
+    }
+  }
+  req.open("POST", "php/checkready.php", true);
+  req.send();
+  setTimeout(function() {
+    if (req.responseText.includes("oui") == true) {
+      document.getElementById('button').disabled = false;
+    } else {
+      document.getElementById('button').disabled = true;
+    }
+  }, 500);
+}
+
+function toggleready() {
+  var req = createHttpRequest();
+  req.onreadystatechange = function() {
+    if (req.status == 200) {
+      console.log(req.status);
+    }
+  }
+  req.open("POST", "php/toggleready.php", true);
+  req.send();
+  setTimeout(function() {
+    if (req.responseText.includes("oui") == true) {
+      document.getElementById('button').disabled = false;
+    }
+  }, 500);
 }
 
 function createHttpRequest() {
