@@ -6,7 +6,7 @@ window.onload = function() {
   setInterval(function() {
     get();
     checkready();
-  }, 2000);
+  }, 1000);
 }
 
 function get() {
@@ -68,14 +68,13 @@ function checkready() {
   req.send();
   setTimeout(function() {
     if (req.responseText.includes("oui") == true) {
-      document.getElementById('button').disabled = false;
-    } else {
-      document.getElementById('button').disabled = true;
+      document.location.href = "bataille.html";
     }
   }, 500);
 }
 
 function toggleready() {
+  checkready();
   var req = createHttpRequest();
   req.onreadystatechange = function() {
     if (req.status == 200) {

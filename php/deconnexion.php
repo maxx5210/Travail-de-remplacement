@@ -1,4 +1,5 @@
 <?php
+include_once('includes/config.php');
 include_once('includes/garbage.php');
 
 session_start();

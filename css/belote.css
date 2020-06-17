@@ -4,7 +4,7 @@ body {
   background-color: #01955E;
 }
 
-.top{
+.top {
   height: 100%;
   position: absolute;
 }
@@ -14,14 +14,14 @@ body {
   justify-content: center;
 }
 
-.colone{
+.colone {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 #bas {
-  bottom:0px;
+  bottom: 0px;
   position: absolute;
 }
 

@@ -1,5 +1,6 @@
 <?php
 //Sert à envoyer l'information des joueurs connecté dans la session depuis la base de donnée pour l'afficher dans le lobby.
+include_once('includes/config.php');
 include_once('includes/garbage.php');
 include_once('includes/refresh.php');
 

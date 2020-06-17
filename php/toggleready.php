@@ -1,5 +1,6 @@
 <?php
 //Sert à faire basculer le status en prêt/Pas prêt
+include_once('includes/config.php');
 include_once('includes/garbage.php');
 include_once('includes/refresh.php');
 
