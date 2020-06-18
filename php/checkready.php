@@ -18,7 +18,20 @@ switch ($_SESSION["game"]) {
     } else {
       echo "non";
     }
+  }
+  break;
 
+  case 'belote':
+
+  $change = $bdd->prepare("SELECT * FROM bataille WHERE idB = ?");
+  $change->execute(array($_SESSION['gid']));
+  $changeres = $change->fetchAll();
+
+
+  foreach ($changeres as $key => $value) {
+    if ($value["J1Status"] == "1" && $value["J2Status"] == "1" && $value["J3Status"] == "1" && $value["J4Status"] == "1" ) {
+      //code
+    }
   }
   break;
 

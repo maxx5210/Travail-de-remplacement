@@ -2,6 +2,7 @@ var paquet1 = [];
 var paquet2 = [];
 var paquet3 = [];
 var paquet4 = [];
+var centre = document.getElementById('centre');
 var mel = 3;
 var obj;
 var reserve = ["7clubs","8clubs","9clubs","10clubs","Jackclubs","Queenclubs","Kingclubs",
@@ -37,11 +38,23 @@ window.onload = function() {
   }
   //////////////////////////////////////////////////////////////////////////////
 
+
   ///////////////////////////////////1er Tour///////////////////////////////////
   function election() {
-    document.getElementById('prendre').
+    centre.push(reserve[0]);
+    document.getElementById('prendre').onclick = function () {
+      paquet1.push(centre[rand]);
+      centre.splice(rand, 1);
+    }
   }
   //////////////////////////////////////////////////////////////////////////////
+
+
+  ///////////////////////////////////2e Tour///////////////////////////////////
+  function choix() {
+
+  }
+  /////////////////////////////////////////////////////////////////////////////
 
   function getRandomInt() {
     return Math.floor(Math.random() * Math.floor(reserve.length));

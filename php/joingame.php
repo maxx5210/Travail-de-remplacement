@@ -28,7 +28,8 @@ foreach ($selectrep as $key => $value) {
     break;
 
     case "belote":
-    echo "belote";
+
+    echo "oui";
     break;
 
     default:

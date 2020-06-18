@@ -11,6 +11,7 @@ $_SESSION['game'] = $jeu;
 $check = $bdd->prepare("SELECT * FROM lobby WHERE nom = ?");
 $check->execute(array($nom));
 $checkresult = $check->fetchAll();
+
 if (empty($checkresult)) {
   $ajout = $bdd->prepare("INSERT INTO lobby (nom,jeu) VALUES (?,?)");
   $ajout->execute(array($nom, $jeu));
@@ -21,10 +22,22 @@ if (empty($checkresult)) {
 
   $_SESSION['gid'] = $saveres[0];
 
-  if ($jeu == "bataille") {
+  switch ($jeu) {
+    case 'bataille':
     $ult = $bdd->prepare("INSERT INTO bataille (idB, nom, J1) VALUES(?,?,?)");
     $ult->execute(array($_SESSION['gid'], $nom, $_SESSION['user']));
     echo "oui";
+    break;
+    
+    case 'belote':
+    $ult = $bdd->prepare("INSERT INTO belote (idB, nom, J1) VALUES(?,?,?)");
+    $ult->execute(array($_SESSION['gid'], $nom, $_SESSION['user']));
+    echo "oui";
+    break;
+
+    default:
+    echo "non";
+    break;
   }
 } else {
   echo "exist";

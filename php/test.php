@@ -10,7 +10,7 @@ if ($_SESSION['game'] == "bataille") {
   $playerrep = $player->fetchAll();
 
   foreach ($playerrep as $key => $value) {
-    $tableau = array("game" => "bataille", "J1" => $value["J1"], "J2" => $value["J2"], "J1Status" => $value["J1Status"], "J2Status" => $value["J2Status"]);
+    $tableau = array("game" => $_SESSION['game'], "J1" => $value["J1"], "J2" => $value["J2"], "J1Status" => $value["J1Status"], "J2Status" => $value["J2Status"]);
   }
 }
 
