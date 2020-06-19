@@ -45,6 +45,7 @@ function lobby(jeu, nom) {
       case req.responseText.includes("exist") == true:
         alert("Le nom de la Salle existe déjà");
         break;
+        
       default:
         alert("ERREUR");
         break;

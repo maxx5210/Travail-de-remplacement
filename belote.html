@@ -1,23 +1,84 @@
-<!DOCTYPE html>
-<html lang="fr" dir="ltr">
+  <!DOCTYPE html>
+  <html lang="fr" dir="ltr">
 
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="css/belote.css">
-  <title>Scrabble</title>
-</head>
+  <head>
+    <meta charset="utf-8">
 
-<body>
-  <div id="haut" class="absolute ligne"><span>Aled</span><span>Aled</span><span>Aled</span><span>Aled</span><span>Aled</span><span>Aled</span><span>Aled</span></div>
-  <div id="bas" class="absolute ligne"><span>Aled</span><span>Aled</span><span>Aled</span><span>Aled</span><span>Aled</span><span>Aled</span><span>Aled</span>
-    <button type="button" name="button" id="prendre"></button>
-  </div>
-  <div id="gauche" class="absolute top colone"><span>Aled</span><span>Aled</span><span>Aled</span><span>Aled</span><span>Aled</span><span>Aled</span><span>Aled</span></div>
-  <div id="droite" class="absolute top colone"><span>Aled</span><span>Aled</span><span>Aled</span><span>Aled</span><span>Aled</span><span>Aled</span><span>Aled</span></div>
-  <div id="centre" class="absolute top colone"><video>
-      <source src="videos/souris.mp4" controls autoplay type="video/mp4"></video></div>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
-  <script src="js/belote.js"></script>
-</body>
+    <link rel="stylesheet" href="css/belote.css">
+    <title>Belote</title>
+  </head>
 
-</html>
+  <body>
+    <div id="haut" class="absolute ligne"><img class="carte" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" src="cartes/nothing.svg" alt="Rien">
+    </div>
+
+    <div id="bas" class="absolute ligne">
+      <button type="button" name="button" id="carreau" disabled>Carreau</button>
+      <button type="button" name="button" id="pique" disabled>Pique</button>
+      <button type="button" name="button" id="coeur" disabled>Coeur</button>
+      <button type="button" name="button" id="trefle" disabled>Trefle</button>
+      <img class="carte" id="carte1" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" id="carte2" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" id="carte3" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" id="carte4" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" id="carte5" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" id="carte6" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" id="carte7" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" id="carte8" src="cartes/nothing.svg" alt="Rien">
+      <button type="button" name="button" id="prendre" disabled>Prendre</button>
+      <button type="button" name="button" id="laisser" disabled>Laisser</button>
+    </div>
+
+    <div id="gauche" class="absolute top colone"><img class="carte" id="carte1" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" src="cartes/nothing.svg" alt="Rien">
+    </div>
+
+    <div id="droite" class="absolute top colone"><img class="carte" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" src="cartes/nothing.svg" alt="Rien">
+      <img class="carte" src="cartes/nothing.svg" alt="Rien">
+    </div>
+
+    <div id="centre" class="absolute top colone">
+
+      <video>
+        <source src="videos/souris.mp4" controls autoplay type="video/mp4"></video></div>
+
+    <script src="js/belote.js"></script>
+  </body>
+
+  </html>

@@ -28,6 +28,27 @@ foreach ($selectrep as $key => $value) {
     break;
 
     case "belote":
+    $aaa = $bdd->prepare("SELECT * FROM belote WHERE idB = ?");
+    $aaa->execute(array($_SESSION['gid']));
+    $bbb = $aaa->fetchAll();
+
+    foreach ($bbb as $key => $value) {
+      if (!isset($value['J2'])) {
+        $insert = $bdd->prepare("UPDATE bataille SET J2 = ? WHERE idB = ?");
+        $insert->execute(array($_SESSION['user'], $gameid));
+
+      } else if (!isset($value['J3'])) {
+        $insert = $bdd->prepare("UPDATE bataille SET J3 = ? WHERE idB = ?");
+        $insert->execute(array($_SESSION['user'], $gameid));
+
+      } else if (!isset($value['J4'])) {
+        $insert = $bdd->prepare("UPDATE bataille SET J4 = ? WHERE idB = ?");
+        $insert->execute(array($_SESSION['user'], $gameid));
+
+        $delete = $bdd->prepare("DELETE FROM lobby WHERE id = ?");
+        $delete->execute(array($_SESSION['gid']));
+      }
+    }
 
     echo "oui";
     break;

@@ -14,12 +14,49 @@ switch ($_SESSION['game']) {
   foreach ($selectplayer as $key => $value) {
 
     switch (true) {
-      case $value['J1'] == $_SESSION['user']&& $value['J1Status'] == "1":
+      case $value['J1'] == $_SESSION['user'] && $value['J1Status'] == "1":
       $update = $bdd->prepare("UPDATE bataille SET J1Status = ?");
       $update->execute(array("0"));
       break;
 
-      case $value['J1'] == $_SESSION['user']&& $value['J1Status'] == "0":
+      case $value['J1'] == $_SESSION['user'] && $value['J1Status'] == "0":
+      $update = $bdd->prepare("UPDATE bataille SET J1Status = ?");
+      $update->execute(array("1"));
+      break;
+
+      case $value['J2'] == $_SESSION['user'] && $value["J2Status"] == "1":
+      $update = $bdd->prepare("UPDATE bataille SET J2Status = ?");
+      $update->execute(array("0"));
+      break;
+
+      case $value['J2'] == $_SESSION['user'] && $value["J2Status"] == "0":
+      $update = $bdd->prepare("UPDATE bataille SET J2Status = ?");
+      $update->execute(array("1"));
+
+      break;
+
+      default:
+
+      break;
+    }
+  }
+  break;
+
+  case 'belote':
+
+  $select = $bdd->prepare("SELECT * FROM belote WHERE idB = ?");
+  $select->execute(array($_SESSION['gid']));
+  $selectplayer = $select->fetchall();
+
+  foreach ($selectplayer as $key => $value) {
+
+    switch (true) {
+      case $value['J1'] == $_SESSION['user'] && $value['J1Status'] == "1":
+      $update = $bdd->prepare("UPDATE bataille SET J1Status = ?");
+      $update->execute(array("0"));
+      break;
+
+      case $value['J1'] == $_SESSION['user'] && $value['J1Status'] == "0":
       $update = $bdd->prepare("UPDATE bataille SET J1Status = ?");
       $update->execute(array("1"));
       break;
@@ -34,69 +71,33 @@ switch ($_SESSION['game']) {
       $update->execute(array("1"));
       break;
 
-      default:
+      case $value['J3'] == $_SESSION['user'] && $value["J3Status"] == "1":
+      $update = $bdd->prepare("UPDATE bataille SET J2Status = ?");
+      $update->execute(array("0"));
+      break;
 
+      case $value['J3'] == $_SESSION['user'] && $value["J3Status"] == "0":
+      $update = $bdd->prepare("UPDATE bataille SET J2Status = ?");
+      $update->execute(array("1"));
+      break;
+
+      case $value['J4'] == $_SESSION['user'] && $value["J4Status"] == "1":
+      $update = $bdd->prepare("UPDATE bataille SET J2Status = ?");
+      $update->execute(array("0"));
+      break;
+
+      case $value['J4'] == $_SESSION['user'] && $value["J4Status"] == "0":
+      $update = $bdd->prepare("UPDATE bataille SET J2Status = ?");
+      $update->execute(array("1"));
+      break;
+
+      default:
       break;
     }
   }
   break;
 
-  case 'belote':
-
-  switch (true) {
-    case $value['J1'] == $_SESSION['user']&& $value['J1Status'] == "1":
-    $update = $bdd->prepare("UPDATE bataille SET J1Status = ?");
-    $update->execute(array("0"));
-    break;
-
-    case $value['J1'] == $_SESSION['user']&& $value['J1Status'] == "0":
-    $update = $bdd->prepare("UPDATE bataille SET J1Status = ?");
-    $update->execute(array("1"));
-    break;
-
-    case $value['J2'] == $_SESSION['user'] && $value["J2Status"] == "1":
-    $update = $bdd->prepare("UPDATE bataille SET J2Status = ?");
-    $update->execute(array("0"));
-    break;
-
-    case $value['J2'] == $_SESSION['user'] && $value["J2Status"] == "0":
-    $update = $bdd->prepare("UPDATE bataille SET J2Status = ?");
-    $update->execute(array("1"));
-    break;
-
-    case $value['J3'] == $_SESSION['user'] && $value["J3Status"] == "1":
-    $update = $bdd->prepare("UPDATE bataille SET J2Status = ?");
-    $update->execute(array("0"));
-    break;
-
-    case $value['J3'] == $_SESSION['user'] && $value["J3Status"] == "0":
-    $update = $bdd->prepare("UPDATE bataille SET J2Status = ?");
-    $update->execute(array("1"));
-    break;
-
-    case $value['J4'] == $_SESSION['user'] && $value["J4Status"] == "1":
-    $update = $bdd->prepare("UPDATE bataille SET J2Status = ?");
-    $update->execute(array("0"));
-    break;
-
-    case $value['J4'] == $_SESSION['user'] && $value["J4Status"] == "0":
-    $update = $bdd->prepare("UPDATE bataille SET J2Status = ?");
-    $update->execute(array("1"));
-    break;
-
-    default:
-
-    break;
-  }
-
-
-  break;
-
   default:
-
   break;
 }
-
-
-
 ?>

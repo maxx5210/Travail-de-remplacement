@@ -50,8 +50,6 @@ function comparaison() {
       case player1card['valeur'] === player2card['valeur']:
         console.log("Bataille !");
         reserve.push(paquet1.shift(), paquet2.shift());
-        devoilerJ1.classList.remove('disabled');
-        devoilerJ2.classList.remove('disabled');
         player1click = false;
         player2click = false;
         carte1.src = "cartes/cardback.svg";
@@ -214,7 +212,6 @@ function prepare() {
     document.getElementById('name2').innerHTML = rep['J2'];
 
     if (rep['status'] == "oui") {
-
       devoilerJ1.classList.remove('disabled');
     } else if (rep['status'] == "non") {
       devoilerJ2.classList.remove('disabled');

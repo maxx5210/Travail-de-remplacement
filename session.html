@@ -3,7 +3,7 @@
 
 <head>
   <link rel="stylesheet" href="css/session.css">
-  <script src="js/session.js" charset="utf-8"></script>
+
   <meta charset="utf-8">
 
   <link rel="stylesheet" href="css/index.css">
@@ -57,10 +57,24 @@
     </span>
   </div>
 
+  <button type="button" name="button" onclick="toggleready();">Prêt / Pas Prêt</button>
   <div id="result">
   </div>
-  <button type="button" name="button" onclick="toggleready();">Prêt / Pas Prêt</button>
-  <button type="button" id="button" onclick="change();">Démarrer la partie</button>
+
+  <div class="hidden" id="teams">
+    <h2>Equipe 1</h2><button type="button" value="team1" onclick="teams();">Rejoindre</button>
+    <ul id="team1">
+
+    </ul>
+
+    <h2>Equipe 2</h2><button type="button" value="team2" onclick="teams();">Rejoindre</button>
+    <ul id="team2">
+
+    </ul>
+  </div>
+
+
+<script src="js/session.js" charset="utf-8"></script>
 </body>
 
 </html>
