@@ -4,6 +4,14 @@ body {
   background-color: #01955E;
 }
 
+button {
+  display: none;
+  height: 5vh;
+  align-items: center;
+  background-color: white;
+  border-radius: 1vh;
+}
+
 .top {
   height: 100%;
   position: absolute;
@@ -20,15 +28,40 @@ body {
   justify-content: center;
 }
 
-#bas {
-  bottom: 0px;
+.doscarte {
+  height: 8vh;
+}
+
+.top {
+  height: 99%;
   position: absolute;
 }
 
+#gauche > .doscarte, #droite > .doscarte {
+  transform: rotate(90deg);
+}
+
+#haut > .doscarte, #jeu > .doscarte {
+  margin-left: 11px;
+  margin-right: 11px;
+}
+
+#bas {
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+  justify-content: space-around;
+}
+
 #gauche {
-  left: 0px;
+  left: 11px;
 }
 
 #droite {
-  right: 0px;
+  right: 11px;
+}
+
+#haut {
+  top: 0px;
+  position: absolute;
 }

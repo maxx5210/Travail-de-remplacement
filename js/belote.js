@@ -4,19 +4,19 @@ var paquet3 = [];
 var paquet4 = [];
 var j = 1; //Variable du joueur qui doit jouer
 var centre = document.getElementById('centre');
-var mel = 3;
+var mel = 3; //Nombre de carte que l'on doit distribuer
 var obj;
-var atout;
+var atout; //Couleur de l'atout
 var prendre = document.getElementById('prendre');
 var laisser = document.getElementById('laisser');
 var coeur = document.getElementById('coeur');
 var pique = document.getElementById('pique');
 var trefle = document.getElementById('trefle');
 var carreau = document.getElementById('carreau');
-var bosspl;
-var bossct;
-var fkiller;
-var partenaire;
+var bosspl; //Joueur Maitre [Sting]
+var bossct; //Carte de ce Joueur [Objet]
+var fkiller; //Fonction pour fermer une autre fonction sous condition
+var partenaire; //Partenaire qui est dans la meme équipe
 var draw;
 var reserve = ["7clubs", "8clubs", "9clubs", "10clubs", "Jackclubs", "Queenclubs", "Kingclubs",
   "7hearts", "8hearts", "9hearts", "10hearts", "Jackhearts", "Queenhearts", "Kinghearts",
@@ -37,7 +37,7 @@ function Jeposequoi() {
     }
   }
   if (fkiller = "couleur") {
-    break;
+    return;
   }
 
   for (var i = 0; i < paquetX.length; i++) {
@@ -48,14 +48,14 @@ function Jeposequoi() {
     }
   }
   if (fkiller = "partenaire") {
-    break;
+    return;
   }
 
   for (var i = 0; i < paquetX.length; i++) {
     monteratout();
   }
   if (fkiller = "atout") {
-    break;
+    return;
   }
 
   for (var i = 0; i < paquetX.length; i++) {
@@ -117,35 +117,34 @@ function melange(input) {
 
 ///////////////////////////////////2e Tour///////////////////////////////////
 function choix() {
-  mel = 2;
   melange(paquet1);
   melange(paquet2);
   melange(paquet3);
   melange(paquet4);
-
+  mel = 2;
   switch (atout) {
     case "carreau":
-      coeur.disabled = false;
-      pique.disabled = false;
-      trefle.disabled = false;
+      coeur.display = "initial";
+      pique.display = "initial";
+      trefle.display = "initial";
       break;
 
     case "coeur":
-      carreau.disabled = false;
-      pique.disabled = false;
-      trefle.disabled = false;
+      carreau.display = "initial";
+      pique.display = "initial";
+      trefle.display = "initial";
       break;
 
     case "pique":
-      carreau.disabled = false;
-      coeur.disabled = false;
-      trefle.disabled = false;
+      carreau.display = "initial";
+      coeur.display = "initial";
+      trefle.display = "initial";
       break;
 
     case "trefle":
-      carreau.disabled = false;
-      coeur.disabled = false;
-      pique.disabled = false;
+      carreau.display = "initial";
+      coeur.display = "initial";
+      pique.display = "initial";
       break;
 
     default:
@@ -161,7 +160,7 @@ function choix() {
 prendre.onclick = function() {
   paquet1.push(draw);
   Object.defineProperty(draw, "atout", {
-    atout: "oui";
+    atout: "oui"
   });
   disabled();
 }
@@ -274,23 +273,34 @@ function prepare() {
   }, 500);
 }
 
+function melange() {
+  var req = createHttpRequest();
+  req.onreadystatechange = function() {
+    if (req.status == 200) {
+      console.log("Status de la requête PHP Melange : ", req.status);
+    }
+  }
+  req.open("POST", "php/belote/melange.php", true);
+  req.send();
+  setTimeout(function() {}, 500);
+}
 
 function tourpartour() {
   var req = createHttpRequest();
   req.onreadystatechange = function() {
     if (req.status == 200) {
-      console.log("Status de la requête PHP Prepare : ", req.status);
+      console.log("Status de la requête PHP Tour par Tour : ", req.status);
     }
   }
   req.open("POST", "php/belote/tourpartour.php", true);
   req.send();
   setTimeout(function() {
-      rep = JSON.parse(req.responseText);
+    rep = JSON.parse(req.responseText);
 
-      if (rep['status'] == rep['joueur'] {
-          prendre.disabled = false;
-          laisser.disabled = false;
-        }
+    if (rep['status'] == rep['joueur']) {
+      prendre.display = "initial";
+      laisser.display = "initial";
+    }
 
-      }, 500);
-  }
+  }, 500);
+}

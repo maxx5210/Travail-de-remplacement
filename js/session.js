@@ -27,8 +27,12 @@ function teams() {
   req.open("POST", "php/teams.php", true);
   req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   req.send("team=" + team);
+  setTimeout(function() {
+    if (req.responseText.includes("joined") == true) {
+      alert("Tu es déjà dans cette équipe");
+    }
+  }, 200);
 }
-
 
 function get() {
   var req = createHttpRequest();
