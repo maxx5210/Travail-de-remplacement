@@ -2,19 +2,19 @@ body {
   display: flex;
   justify-content: center;
   background-color: #01955E;
+  overflow: hidden;
 }
 
 button {
   display: none;
   height: 5vh;
-  align-items: center;
+  align-self: center;
   background-color: white;
   border-radius: 1vh;
 }
 
-.top {
-  height: 100%;
-  position: absolute;
+span {
+  font-size: 2vmin;
 }
 
 .ligne {
@@ -32,16 +32,26 @@ button {
   height: 8vh;
 }
 
+.posable {
+  border: 1vh solid lightgreen;
+  border-radius: 2vh;
+}
+
+.disabled {
+  pointer-events: none;
+  border: none;
+}
+
 .top {
   height: 99%;
   position: absolute;
 }
 
-#gauche > .doscarte, #droite > .doscarte {
+#gauche>.doscarte, #droite>.doscarte {
   transform: rotate(90deg);
 }
 
-#haut > .doscarte, #jeu > .doscarte {
+#haut>.doscarte, #jeu>.doscarte {
   margin-left: 11px;
   margin-right: 11px;
 }
@@ -63,5 +73,34 @@ button {
 
 #haut {
   top: 0px;
+  position: absolute;
+}
+
+#centre {
+  top: 38%;
+  height: 25vh;
+}
+
+#nom1 {
+  bottom: 25vh;
+  left: 48vw;
+  position: absolute;
+}
+
+#nom2 {
+  left: 25vw;
+  top: 49.5vh;
+  position: absolute;
+}
+
+#nom3 {
+  top: 25vh;
+  left: 48vw;
+  position: absolute;
+}
+
+#nom4 {
+  right: 25vw;
+  top: 49.5vh;
   position: absolute;
 }

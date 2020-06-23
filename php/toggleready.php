@@ -52,42 +52,42 @@ switch ($_SESSION['game']) {
 
     switch (true) {
       case $value['J1'] == $_SESSION['user'] && $value['J1Status'] == "1":
-      $update = $bdd->prepare("UPDATE bataille SET J1Status = ?");
+      $update = $bdd->prepare("UPDATE belote SET J1Status = ?");
       $update->execute(array("0"));
       break;
 
       case $value['J1'] == $_SESSION['user'] && $value['J1Status'] == "0":
-      $update = $bdd->prepare("UPDATE bataille SET J1Status = ?");
+      $update = $bdd->prepare("UPDATE belote SET J1Status = ?");
       $update->execute(array("1"));
       break;
 
       case $value['J2'] == $_SESSION['user'] && $value["J2Status"] == "1":
-      $update = $bdd->prepare("UPDATE bataille SET J2Status = ?");
+      $update = $bdd->prepare("UPDATE belote SET J2Status = ?");
       $update->execute(array("0"));
       break;
 
       case $value['J2'] == $_SESSION['user'] && $value["J2Status"] == "0":
-      $update = $bdd->prepare("UPDATE bataille SET J2Status = ?");
+      $update = $bdd->prepare("UPDATE belote SET J2Status = ?");
       $update->execute(array("1"));
       break;
 
       case $value['J3'] == $_SESSION['user'] && $value["J3Status"] == "1":
-      $update = $bdd->prepare("UPDATE bataille SET J2Status = ?");
+      $update = $bdd->prepare("UPDATE belote SET J3Status = ?");
       $update->execute(array("0"));
       break;
 
       case $value['J3'] == $_SESSION['user'] && $value["J3Status"] == "0":
-      $update = $bdd->prepare("UPDATE bataille SET J2Status = ?");
+      $update = $bdd->prepare("UPDATE belote SET J3Status = ?");
       $update->execute(array("1"));
       break;
 
       case $value['J4'] == $_SESSION['user'] && $value["J4Status"] == "1":
-      $update = $bdd->prepare("UPDATE bataille SET J2Status = ?");
+      $update = $bdd->prepare("UPDATE belote SET J4Status = ?");
       $update->execute(array("0"));
       break;
 
       case $value['J4'] == $_SESSION['user'] && $value["J4Status"] == "0":
-      $update = $bdd->prepare("UPDATE bataille SET J2Status = ?");
+      $update = $bdd->prepare("UPDATE belote SET J4Status = ?");
       $update->execute(array("1"));
       break;
 

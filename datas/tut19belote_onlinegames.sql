@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 19 juin 2020 à 08:31
+-- Généré le :  mar. 23 juin 2020 à 07:30
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -51,6 +51,9 @@ DROP TABLE IF EXISTS `belote`;
 CREATE TABLE IF NOT EXISTS `belote` (
   `idB` int(11) NOT NULL AUTO_INCREMENT,
   `nom` text NOT NULL,
+  `team1` text NOT NULL,
+  `team2` text NOT NULL,
+  `reserve` text NOT NULL,
   `J1` text NOT NULL,
   `J1Paquet` text NOT NULL,
   `J1Status` tinyint(1) NOT NULL DEFAULT '0',
@@ -64,7 +67,14 @@ CREATE TABLE IF NOT EXISTS `belote` (
   `J4Paquet` text NOT NULL,
   `J4Status` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idB`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `belote`
+--
+
+INSERT INTO `belote` (`idB`, `nom`, `team1`, `team2`, `reserve`, `J1`, `J1Paquet`, `J1Status`, `J2`, `J2Paquet`, `J2Status`, `J3`, `J3Paquet`, `J3Status`, `J4`, `J4Paquet`, `J4Status`) VALUES
+(1, '852ml', 'maxx', '', '', 'maxx', '', 0, '', '', 0, '', '', 0, '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -94,7 +104,14 @@ CREATE TABLE IF NOT EXISTS `lobby` (
   `jeu` text NOT NULL,
   `nom` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `lobby`
+--
+
+INSERT INTO `lobby` (`id`, `joueurs`, `jeu`, `nom`) VALUES
+(1, '', 'belote', '852ml');
 
 -- --------------------------------------------------------
 

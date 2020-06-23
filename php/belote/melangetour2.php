@@ -1,7 +1,7 @@
 <?php
-include_once('includes/config.php');
-include_once('includes/garbage.php');
-include_once('includes/refresh.php');
+include_once('../includes/config.php');
+include_once('../includes/garbage.php');
+include_once('../includes/refresh.php');
 
 $checkp1 = $bdd->prepare("SELECT * FROM belote WHERE idB = ?");
 $checkp1->execute(array($_SESSION['gid']));
@@ -16,7 +16,7 @@ foreach ($reponse as $key => $value) {
 }
 
 function melange($reserve){
-  for ($j=0; $j < 3; $j++) {
+  for ($j=0; $j < 2; $j++) {
     $rand = rand(0, count($reserve)-1);
     echo $rand."";
     $paquet1[] = $reserve[$rand];
@@ -40,6 +40,21 @@ function melange($reserve){
     $paquet4[] = $reserve[$rand];
     array_splice($reserve, $rand, 1);
   }
+
+  $ins = $GLOBALS['bdd']->prepare("UPDATE belote SET J1Paquet = ? WHERE idB = ?");
+  $ins->execute(array(implode(",", $paquet1) ,$_SESSION['gid']));
+
+  $ins2 = $GLOBALS['bdd']->prepare("UPDATE belote SET J2Paquet = ? WHERE idB = ?");
+  $ins2->execute(array(implode(",", $paquet2) ,$_SESSION['gid']));
+
+  $ins3 = $GLOBALS['bdd']->prepare("UPDATE belote SET J3Paquet = ? WHERE idB = ?");
+  $ins3->execute(array(implode(",", $paquet3) ,$_SESSION['gid']));
+
+  $ins4 = $GLOBALS['bdd']->prepare("UPDATE belote SET J4Paquet = ? WHERE idB = ?");
+  $ins4->execute(array(implode(",", $paquet4) ,$_SESSION['gid']));
+
+  $insr = $GLOBALS['bdd']->prepare("UPDATE belote SET reserve = ? WHERE idB = ?");
+  $insr->execute(array(implode(",", $reserve) ,$_SESSION['gid']));
 }
 
  ?>

@@ -33,24 +33,36 @@ foreach ($selectrep as $key => $value) {
     $bbb = $aaa->fetchAll();
 
     foreach ($bbb as $key => $value) {
-      if (!isset($value['J2'])) {
-        $insert = $bdd->prepare("UPDATE bataille SET J2 = ? WHERE idB = ?");
-        $insert->execute(array($_SESSION['user'], $gameid));
+      switch (true) {
+        case $value['J2'] == "":
+        $insert = $bdd->prepare("UPDATE belote SET J2 = ? WHERE idB = ?");
+        $insert->execute(array($_SESSION['user'], $_SESSION['gid']));
 
-      } else if (!isset($value['J3'])) {
-        $insert = $bdd->prepare("UPDATE bataille SET J3 = ? WHERE idB = ?");
-        $insert->execute(array($_SESSION['user'], $gameid));
+        echo "oui";
+        break;
 
-      } else if (!isset($value['J4'])) {
-        $insert = $bdd->prepare("UPDATE bataille SET J4 = ? WHERE idB = ?");
-        $insert->execute(array($_SESSION['user'], $gameid));
+        case $value['J3'] == "":
+        $insert = $bdd->prepare("UPDATE belote SET J3 = ? WHERE idB = ?");
+        $insert->execute(array($_SESSION['user'], $_SESSION['gid']));
+
+        echo "oui";
+        break;
+
+        case $value['J4'] == "":
+        $insert = $bdd->prepare("UPDATE belote SET J4 = ? WHERE idB = ?");
+        $insert->execute(array($_SESSION['user'], $_SESSION['gid']));
 
         $delete = $bdd->prepare("DELETE FROM lobby WHERE id = ?");
         $delete->execute(array($_SESSION['gid']));
+
+        echo "oui";
+        break;
+
+        default:
+        echo "non";
+        break;
       }
     }
-
-    echo "oui";
     break;
 
     default:

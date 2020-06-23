@@ -2,10 +2,15 @@ var paquet1 = [];
 var paquet2 = [];
 var paquet3 = [];
 var paquet4 = [];
+var nom1 = document.getElementById('nom1');
+var nom2 = document.getElementById('nom2');
+var nom3 = document.getElementById('nom3');
+var nom4 = document.getElementById('nom4');
 var j = 1; //Variable du joueur qui doit jouer
 var centre = document.getElementById('centre');
 var mel = 3; //Nombre de carte que l'on doit distribuer
 var obj;
+var obs;
 var atout; //Couleur de l'atout
 var prendre = document.getElementById('prendre');
 var laisser = document.getElementById('laisser');
@@ -13,15 +18,24 @@ var coeur = document.getElementById('coeur');
 var pique = document.getElementById('pique');
 var trefle = document.getElementById('trefle');
 var carreau = document.getElementById('carreau');
+var carte1 = document.getElementById('carte1');
+var carte2 = document.getElementById('carte2');
+var carte3 = document.getElementById('carte3');
+var carte4 = document.getElementById('carte4');
+var carte5 = document.getElementById('carte5');
+var carte6 = document.getElementById('carte6');
+var carte7 = document.getElementById('carte7');
+var carte8 = document.getElementById('carte8');
+var main =  [carte1,carte2,carte3,carte4,carte5,carte6,carte7,carte8];
 var bosspl; //Joueur Maitre [Sting]
 var bossct; //Carte de ce Joueur [Objet]
 var fkiller; //Fonction pour fermer une autre fonction sous condition
 var partenaire; //Partenaire qui est dans la meme équipe
 var draw;
-var reserve = ["7clubs", "8clubs", "9clubs", "10clubs", "Jackclubs", "Queenclubs", "Kingclubs",
-  "7hearts", "8hearts", "9hearts", "10hearts", "Jackhearts", "Queenhearts", "Kinghearts",
-  "7spades", "8spades", "9spades", "10spades", "Jackspades", "Queenspades", "Kingspades",
-  "7diamonds", "8diamonds", "9diamonds", "10diamonds", "Jackdiamonds", "Queendiamonds", "Kingdiamonds"
+var reserve = ["1clubs", "7clubs", "8clubs", "9clubs", "10clubs", "Jackclubs", "Queenclubs", "Kingclubs",
+"1hearts", "7hearts", "8hearts", "9hearts", "10hearts", "Jackhearts", "Queenhearts", "Kinghearts",
+"1spades", "7spades", "8spades", "9spades", "10spades", "Jackspades", "Queenspades", "Kingspades",
+"1diamonds", "7diamonds", "8diamonds", "9diamonds", "10diamonds", "Jackdiamonds", "Queendiamonds", "Kingdiamonds"
 ];
 
 window.onload = function() {
@@ -29,10 +43,11 @@ window.onload = function() {
 }
 
 //////////////////////////////////Comparaison//////////////////////////////////
-function Jeposequoi() {
+function jeposequoi() {
   for (var i = 0; i < paquetX.length; i++) {
     if (paquetX[i].couleur === atout) {
-      main[i].disabled = false;
+      main[i].classList.remove("disabled");
+      main[i].classList.add("posable");
       fkiller = "couleur";
     }
   }
@@ -68,7 +83,8 @@ function Jeposequoi() {
 function monteratout() {
   if (paquetX[i].atout === "oui") {
     if (paquetX[i].valatout > bossct["valatout"] || bossct === undefined) {
-      main[i].disabled = false;
+      main[i].classList.remove("disabled");
+      main[i].classList.add("posable");
       fkiller = "atout";
     }
   }
@@ -76,7 +92,8 @@ function monteratout() {
 
 function normal() {
   if (paquetX[i].atout === undefined) {
-    main[i].disabled = false;
+    main[i].classList.remove("disabled");
+    main[i].classList.add("posable");
   }
 }
 //////////////////////////////////////////////////////////////////////////////
@@ -84,12 +101,10 @@ function normal() {
 
 /////////////////////////////////Initialisation///////////////////////////////
 function playstart() {
-  melange(paquet1);
-  melange(paquet2);
-  melange(paquet3);
-  melange(paquet4);
+  melange();
   atout();
   tourpartour();
+  melangetour2();
   choix();
 }
 //////////////////////////////////////////////////////////////////////////////
@@ -103,49 +118,37 @@ function atout() {
 }
 ////////////////////////////////////////////////////////////////////////////////
 
-
-///////////////////////////////////Mélange///////////////////////////////////
-function melange(input) {
-  for (let i = 0; i < mel; i++) {
-    let rand = getRandomInt();
-    input.push(obj[reserve[rand]]);
-    reserve.splice(rand, 1);
-  }
-}
-//////////////////////////////////////////////////////////////////////////////
-
-
 ///////////////////////////////////2e Tour///////////////////////////////////
 function choix() {
   melange(paquet1);
   melange(paquet2);
   melange(paquet3);
   melange(paquet4);
-  mel = 2;
+
   switch (atout) {
     case "carreau":
-      coeur.display = "initial";
-      pique.display = "initial";
-      trefle.display = "initial";
-      break;
+    coeur.style.display = "initial";
+    pique.style.display = "initial";
+    trefle.style.display = "initial";
+    break;
 
     case "coeur":
-      carreau.display = "initial";
-      pique.display = "initial";
-      trefle.display = "initial";
-      break;
+    carreau.style.display = "initial";
+    pique.style.display = "initial";
+    trefle.style.display = "initial";
+    break;
 
     case "pique":
-      carreau.display = "initial";
-      coeur.display = "initial";
-      trefle.display = "initial";
-      break;
+    carreau.style.display = "initial";
+    coeur.style.display = "initial";
+    trefle.style.display = "initial";
+    break;
 
     case "trefle":
-      carreau.display = "initial";
-      coeur.display = "initial";
-      pique.display = "initial";
-      break;
+    carreau.style.display = "initial";
+    coeur.style.display = "initial";
+    pique.style.display = "initial";
+    break;
 
     default:
   }
@@ -254,19 +257,32 @@ function prepare() {
   req.onreadystatechange = function() {
     if (req.status == 200) {
       console.log("Status de la requête JSON : Cartes : ", req.status);
-      obj = req.responseText;
+      obs = req.responseText;
     }
   }
   req.open("POST", "php/belote/preparebelote.php", true);
   req.send();
   setTimeout(function() {
-    obj = JSON.parse(obj);
-    playstart();
+    obs = JSON.parse(obs);
+    melange();
+    nom1.innerHTML = obs['J1'];
+    nom2.innerHTML = obs['J2'];
+    nom3.innerHTML = obs['J3'];
+    nom4.innerHTML = obs['J4'];
 
-    switch (obj['status']) {
-      case expression:
+    switch (obj['status'])  {
+      case "J1":
+      melange();
+      break;
+      case "J2":
 
-        break;
+      break;
+      case "J3":
+
+      break;
+      case "J4":
+
+      break;
       default:
 
     }
@@ -282,8 +298,35 @@ function melange() {
   }
   req.open("POST", "php/belote/melange.php", true);
   req.send();
-  setTimeout(function() {}, 500);
+  setTimeout(function() {}, 200);
 }
+
+
+function melangetour2() {
+  var req = createHttpRequest();
+  req.onreadystatechange = function() {
+    if (req.status == 200) {
+      console.log("Status de la requête PHP Melange : ", req.status);
+    }
+  }
+  req.open("POST", "php/belote/melangetour2.php", true);
+  req.send();
+  setTimeout(function() {}, 200);
+}
+
+
+function getcards() {
+  var req = createHttpRequest();
+  req.onreadystatechange = function() {
+    if (req.status == 200) {
+      console.log("Status de la requête PHP Melange : ", req.status);
+    }
+  }
+  req.open("POST", "php/belote/getcards.php", true);
+  req.send();
+  setTimeout(function() {}, 200);
+}
+
 
 function tourpartour() {
   var req = createHttpRequest();
@@ -295,7 +338,7 @@ function tourpartour() {
   req.open("POST", "php/belote/tourpartour.php", true);
   req.send();
   setTimeout(function() {
-    rep = JSON.parse(req.responseText);
+    var rep = JSON.parse(req.responseText);
 
     if (rep['status'] == rep['joueur']) {
       prendre.display = "initial";

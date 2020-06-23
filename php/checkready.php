@@ -26,8 +26,13 @@ switch ($_SESSION["game"]) {
   $changeres = $change->fetchAll();
 
   foreach ($changeres as $key => $value) {
+    $a = explode(",", $value['team1']);
+    $b = explode(",", $value['team2']);
+
     if ($value["J1Status"] == "1" && $value["J2Status"] == "1" && $value["J3Status"] == "1" && $value["J4Status"] == "1" ) {
-      echo "belote";
+      if (count($a) == count($b) && count($a) > 0 && count($b) > 0) {
+        echo "belote";
+      }
     } else {
       echo "non";
     }

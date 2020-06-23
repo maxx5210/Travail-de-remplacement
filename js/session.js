@@ -7,12 +7,21 @@ var team2ul = document.getElementById("team2");
 var team1 = [];
 var team2 = [];
 var result = document.getElementById("result");
+var ready = false;
+var p1status = document.getElementById('P1Status');
+var p2status = document.getElementById('P2Status');
+var p3status = document.getElementById('P3Status');
+var p4status = document.getElementById('P4Status');
+var p1 = document.getElementById('P1');
+var p2 = document.getElementById('P2');
+var p3 = document.getElementById('P3');
+var p4 = document.getElementById('P4');
 
 window.onload = function() {
-  get();
   setInterval(function() {
+    get();
     status();
-  }, 1000);
+  }, 500);
 }
 
 function teams() {
@@ -31,6 +40,9 @@ function teams() {
     if (req.responseText.includes("joined") == true) {
       alert("Tu es déjà dans cette équipe");
     }
+    if (ready == true) {
+      toggleready();
+    }
   }, 200);
 }
 
@@ -45,8 +57,16 @@ function get() {
   req.send();
   setTimeout(function() {
     player = JSON.parse(req.responseText);
+    if (player['game'] == "belote") {
+      team1 = player['team1'].split(",");
+      team2 = player['team2'].split(",");
+
+      team1ul.innerHTML = team1;
+      team2ul.innerHTML = team2;
+    }
   }, 200);
 }
+
 
 function status() {
   checkready();
@@ -64,76 +84,76 @@ function status() {
     switch (obj['game']) {
       case "bataille":
         if (obj["J1Status"] == "1") {
-          document.getElementById('P1Status').innerHTML = "Prêt";
-          document.getElementById('P1Status').style.color = "green";
-          document.getElementById('P1Status').style.border = "1px solid green";
+          p1status.innerHTML = "Prêt";
+          p1status.style.color = "green";
+          p1status.style.border = "1px solid green";
         } else {
-          document.getElementById('P1Status').innerHTML = "Pas prêt";
-          document.getElementById('P1Status').style.color = "red";
-          document.getElementById('P1Status').style.border = "1px solid red";
+          p1status.innerHTML = "Pas prêt";
+          p1status.style.color = "red";
+          p1status.style.border = "1px solid red";
         }
         if (obj["J2Status"] == "1") {
-          document.getElementById('P2Status').innerHTML = "Prêt";
-          document.getElementById('P2Status').style.color = "green";
-          document.getElementById('P2Status').style.border = "1px solid green";
+          p2status.innerHTML = "Prêt";
+          p2status.style.color = "green";
+          p2status.style.border = "1px solid green";
         } else {
-          document.getElementById('P2Status').innerHTML = "Pas prêt";
-          document.getElementById('P2Status').style.color = "red";
-          document.getElementById('P2Status').style.border = "1px solid red";
+          p2status.innerHTML = "Pas prêt";
+          p2status.style.color = "red";
+          p2status.style.border = "1px solid red";
         }
         if (balance == true) {
-          document.getElementById('P1').innerHTML = "Joueur 1 : " + obj['J1'];
-          document.getElementById('P2').innerHTML = "Joueur 2 : " + obj['J2'];
-          document.getElementById('P3').remove();
-          document.getElementById('P3Status').remove();
-          document.getElementById('P4').remove();
-          document.getElementById('P4Status').remove();
+          p1.innerHTML = "Joueur 1 : " + obj['J1'];
+          p2.innerHTML = "Joueur 2 : " + obj['J2'];
+          p3.remove();
+          p3status.remove();
+          p4.remove();
+          p4status.remove();
           balance = false;
         }
         break;
 
       case 'belote':
         if (obj["J1Status"] == "1") {
-          document.getElementById('P1Status').innerHTML = "Prêt";
-          document.getElementById('P1Status').style.color = "green";
-          document.getElementById('P1Status').style.border = "1px solid green";
+          p1status.innerHTML = "Prêt";
+          p1status.style.color = "green";
+          p1status.style.border = "1px solid green";
         } else {
-          document.getElementById('P1Status').innerHTML = "Pas prêt";
-          document.getElementById('P1Status').style.color = "red";
-          document.getElementById('P1Status').style.border = "1px solid red";
+          p1status.innerHTML = "Pas prêt";
+          p1status.style.color = "red";
+          p1status.style.border = "1px solid red";
         }
         if (obj["J2Status"] == "1") {
-          document.getElementById('P2Status').innerHTML = "Prêt";
-          document.getElementById('P2Status').style.color = "green";
-          document.getElementById('P2Status').style.border = "1px solid green";
+          p2status.innerHTML = "Prêt";
+          p2status.style.color = "green";
+          p2status.style.border = "1px solid green";
         } else {
-          document.getElementById('P2Status').innerHTML = "Pas prêt";
-          document.getElementById('P2Status').style.color = "red";
-          document.getElementById('P2Status').style.border = "1px solid red";
+          p2status.innerHTML = "Pas prêt";
+          p2status.style.color = "red";
+          p2status.style.border = "1px solid red";
         }
         if (obj["J3Status"] == "1") {
-          document.getElementById('P3Status').innerHTML = "Prêt";
-          document.getElementById('P3Status').style.color = "green";
-          document.getElementById('P3Status').style.border = "1px solid green";
+          p3status.innerHTML = "Prêt";
+          p3status.style.color = "green";
+          p3status.style.border = "1px solid green";
         } else {
-          document.getElementById('P3Status').innerHTML = "Pas prêt";
-          document.getElementById('P3Status').style.color = "red";
-          document.getElementById('P3Status').style.border = "1px solid red";
+          p3status.innerHTML = "Pas prêt";
+          p3status.style.color = "red";
+          p3status.style.border = "1px solid red";
         }
         if (obj["J4Status"] == "1") {
-          document.getElementById('P4Status').innerHTML = "Prêt";
-          document.getElementById('P4Status').style.color = "green";
-          document.getElementById('P4Status').style.border = "1px solid green";
+          p4status.innerHTML = "Prêt";
+          p4status.style.color = "green";
+          p4status.style.border = "1px solid green";
         } else {
-          document.getElementById('P4Status').innerHTML = "Pas prêt";
-          document.getElementById('P4Status').style.color = "red";
-          document.getElementById('P4Status').style.border = "1px solid red";
+          p4status.innerHTML = "Pas prêt";
+          p4status.style.color = "red";
+          p4status.style.border = "1px solid red";
         }
+        p1.innerHTML = "Joueur 1 : " + obj['J1'];
+        p2.innerHTML = "Joueur 2 : " + obj['J2'];
+        p3.innerHTML = "Joueur 3 : " + obj['J3'];
+        p4.innerHTML = "Joueur 4 : " + obj['J4'];
         if (balance == true) {
-          document.getElementById('P1').innerHTML = "Joueur 1 : " + obj['J1'];
-          document.getElementById('P2').innerHTML = "Joueur 2 : " + obj['J2'];
-          document.getElementById('P3').innerHTML = "Joueur 3 : " + obj['J3'];
-          document.getElementById('P4').innerHTML = "Joueur 4 : " + obj['J4'];
           document.getElementById("teams").classList.remove("hidden");
           balance = false;
         }
@@ -144,6 +164,7 @@ function status() {
     }
   }, 500);
 }
+
 
 function checkready() {
   var req = createHttpRequest();
@@ -161,9 +182,7 @@ function checkready() {
         break;
 
       case req.responseText.includes("belote") == true:
-        if (document.getElementById("team1").childElementCount !== document.getElementById("team2").childElementCount) {
-          result.innherHTML = "Les équipes ne sont pas équilibrées";
-        }
+        document.location.href = "belote.html";
         break;
 
       default:
@@ -179,6 +198,11 @@ function toggleready() {
     if (req.status == 200) {
       console.log(req.status);
     }
+  }
+  if (ready == true) {
+    ready = false;
+  } else {
+    ready = true;
   }
   req.open("POST", "php/toggleready.php", true);
   req.send();

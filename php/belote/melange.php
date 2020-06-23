@@ -1,7 +1,7 @@
 <?php
-include_once('includes/config.php');
-include_once('includes/garbage.php');
-include_once('includes/refresh.php');
+include_once('../includes/config.php');
+include_once('../includes/garbage.php');
+include_once('../includes/refresh.php');
 
 $checkp1 = $bdd->prepare("SELECT * FROM belote WHERE idB = ?");
 $checkp1->execute(array($_SESSION['gid']));

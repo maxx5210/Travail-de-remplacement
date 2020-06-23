@@ -23,8 +23,8 @@ switch ($_SESSION['game']) {
   foreach ($playerrep as $key => $value) {
     $tableau = array(
       "game" => $_SESSION['game'], "J1" => $value["J1"], "J2" => $value["J2"], "J3" => $value["J3"], "J4" => $value["J4"],
-     "J1Status" => $value["J1Status"], "J2Status" => $value["J2Status"], "J3Status" => $value["J3Status"], "J4Status" => $value["J4Status"]
-   );
+      "J1Status" => $value["J1Status"], "J2Status" => $value["J2Status"], "J3Status" => $value["J3Status"], "J4Status" => $value["J4Status"]
+    );
   }
 
   default:
