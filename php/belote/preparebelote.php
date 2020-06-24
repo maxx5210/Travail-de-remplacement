@@ -55,6 +55,18 @@ foreach ($selectres as $key => $value) {
     }
 
     $tbl = array('J1' => $j1, 'J2' => $j2, 'J3' => $j3, 'J4' => $j4, 'status' => "J1");
+
+    $upd = $bdd->prepare("UPDATE belote SET J1 = ? WHERE idB = ?");
+    $upd->execute(array($j1, $_SESSION['gid']));
+
+    $upd2 = $bdd->prepare("UPDATE belote SET J2 = ? WHERE idB = ?");
+    $upd2->execute(array($j2, $_SESSION['gid']));
+
+    $upd3 = $bdd->prepare("UPDATE belote SET J3 = ? WHERE idB = ?");
+    $upd3->execute(array($j3, $_SESSION['gid']));
+
+    $upd4 = $bdd->prepare("UPDATE belote SET J4 = ? WHERE idB = ?");
+    $upd4->execute(array($j4, $_SESSION['gid']));
     break;
 
     case $_SESSION['user'] == $value['J2']:

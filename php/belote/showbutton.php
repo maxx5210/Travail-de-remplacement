@@ -12,29 +12,18 @@ foreach ($rep as $key => $value) {
     case $value['tour'] == "1" && $value['J1'] == $_SESSION['user']:
     $status = "oui";
 
-    $upp = $bdd->prepare("UPDATE belote SET tour = ? WHERE idB = ?");
-    $upp->execute(array("2", $_SESSION['gid']));
     break;
-
     case $value['tour'] == "2" && $value['J2'] == $_SESSION['user']:
     $status = "oui";
 
-    $upp = $bdd->prepare("UPDATE belote SET tour = ? WHERE idB = ?");
-    $upp->execute(array("3", $_SESSION['gid']));
     break;
 
     case $value['tour'] == "3" && $value['J3'] == $_SESSION['user']:
     $status = "oui";
-
-    $upp = $bdd->prepare("UPDATE belote SET tour = ? WHERE idB = ?");
-    $upp->execute(array("4", $_SESSION['gid']));
     break;
 
     case $value['tour'] == "4" && $value['J4'] == $_SESSION['user']:
     $status = "oui";
-
-    $upp = $bdd->prepare("UPDATE belote SET tour = ? WHERE idB = ?");
-    $upp->execute(array("1", $_SESSION['gid']));
     break;
 
     default:

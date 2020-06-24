@@ -10,13 +10,19 @@ $reponse = $checkp1->fetchAll();
 foreach ($reponse as $key => $value) {
   $reserve = explode(",", $value['reserve']);
   $paquet1 = explode(",", $value['paquet1']);
-  $pasuet2 = explode(",", $value['paquet2']);
+  $paquet2 = explode(",", $value['paquet2']);
   $paquet3 = explode(",", $value['paquet3']);
   $paquet4 = explode(",", $value['paquet4']);
 }
 
+foreach ($reponse as $key => $value) {
+  if ($value['J1'] == $_SESSION['user']) {
+    melange($reserve);
+  }
+}
+
 function melange($reserve){
-  for ($j=0; $j < 2; $j++) {
+  for ($j=0; $j < 3; $j++) {
     $rand = rand(0, count($reserve)-1);
     echo $rand."";
     $paquet1[] = $reserve[$rand];

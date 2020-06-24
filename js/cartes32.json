@@ -3,200 +3,232 @@
     "titre": "As de Carreau",
     "valeur": 11,
     "src": "1diamonds",
-    "couleur": "carreau"
+    "couleur": "carreau",
+    "atout": ""
   },
   "1spades": {
     "titre": "As de Pique",
     "valeur": 11,
     "src": "1spades",
-    "couleur": "pique"
+    "couleur": "pique",
+    "atout": ""
   },
   "1hearts": {
     "titre": "As de Coeur",
     "valeur": 11,
     "src": "1hearts",
-    "couleur": "coeur"
+    "couleur": "coeur",
+    "atout": ""
   },
   "1clubs": {
     "titre": "As de Trefle",
     "valeur": 11,
     "src": "1clubs",
-    "couleur": "trefle"
+    "couleur": "trefle",
+    "atout": ""
   },
   "7diamonds": {
     "titre": "7 de Carreau",
     "valeur": 0,
     "src": "7diamonds",
-    "couleur": "carreau"
+    "couleur": "carreau",
+    "atout": ""
   },
   "7spades": {
     "titre": "7 de Pique",
     "valeur": 0,
     "src": "7spades",
-    "couleur": "pique"
+    "couleur": "pique",
+    "atout": ""
   },
   "7hearts": {
     "titre": "7 de Coeur",
     "valeur": 0,
     "src": "7hearts",
-    "couleur": "coeur"
+    "couleur": "coeur",
+    "atout": ""
   },
   "7clubs": {
     "titre": "7 de Trefle",
     "valeur": 0,
     "src": "7clubs",
-    "couleur": "trefle"
+    "couleur": "trefle",
+    "atout": ""
   },
   "8diamonds": {
     "titre": "8 de Carreau",
     "valeur": 0,
     "src": "8diamonds",
-    "couleur": "carreau"
+    "couleur": "carreau",
+    "atout": ""
   },
   "8spades": {
     "titre": "8 de Pique",
     "valeur": 0,
     "src": "8spades",
-    "couleur": "pique"
+    "couleur": "pique",
+    "atout": ""
   },
   "8hearts": {
     "titre": "8 de Coeur",
     "valeur": 0,
     "src": "8hearts",
-    "couleur": "coeur"
+    "couleur": "coeur",
+    "atout": ""
   },
   "8clubs": {
     "titre": "8 de Trefle",
     "valeur": 0,
     "src": "8clubs",
-    "couleur": "trefle"
+    "couleur": "trefle",
+    "atout": ""
   },
   "9diamonds": {
     "titre": "9 de Carreau",
     "valeur": 0,
     "valatout": 14,
     "src": "9diamonds",
-    "couleur": "carreau"
+    "couleur": "carreau",
+    "atout": ""
   },
   "9spades": {
     "titre": "9 de Pique",
     "valeur": 0,
     "valatout": 14,
     "src": "9spades",
-    "couleur": "pique"
+    "couleur": "pique",
+    "atout": ""
   },
   "9hearts": {
     "titre": "9 de Coeur",
     "valeur": 0,
     "valatout": 14,
     "src": "9hearts",
-    "couleur": "coeur"
+    "couleur": "coeur",
+    "atout": ""
   },
   "9clubs": {
     "titre": "9 de Trefle",
     "valeur": 0,
     "valatout": 14,
     "src": "9clubs",
-    "couleur": "trefle"
+    "couleur": "trefle",
+    "atout": ""
   },
   "10diamonds": {
     "titre": "10 de Carreau",
     "valeur": 10,
     "src": "10diamonds",
-    "couleur": "carreau"
+    "couleur": "carreau",
+    "atout": ""
   },
   "10spades": {
     "titre": "10 de Pique",
     "valeur": 10,
     "src": "10spades",
-    "couleur": "pique"
+    "couleur": "pique",
+    "atout": ""
   },
   "10hearts": {
     "titre": "10 de Coeur",
     "valeur": 10,
     "src": "10hearts",
-    "couleur": "coeur"
+    "couleur": "coeur",
+    "atout": ""
   },
   "10clubs": {
     "titre": "10 de Trefle",
     "valeur": 10,
     "src": "10clubs",
-    "couleur": "trefle"
+    "couleur": "trefle",
+    "atout": ""
   },
   "Jackdiamonds": {
     "titre": "Valet de Carreau",
     "valeur": 2,
     "valatout": 20,
     "src": "Jackdiamonds",
-    "couleur": "carreau"
+    "couleur": "carreau",
+    "atout": ""
   },
   "Jackspades": {
     "titre": "Valet de Pique",
     "valeur": 2,
     "valatout": 20,
     "src": "Jackspades",
-    "couleur": "pique"
+    "couleur": "pique",
+    "atout": ""
   },
   "Jackhearts": {
     "titre": "Valet de Coeur",
     "valeur": 2,
     "valatout": 20,
     "src": "Jackhearts",
-    "couleur": "coeur"
+    "couleur": "coeur",
+    "atout": ""
   },
   "Jackclubs": {
     "titre": "Valet de Trefle",
     "valeur": 2,
     "valatout": 20,
     "src": "Jackclubs",
-    "couleur": "trefle"
+    "couleur": "trefle",
+    "atout": ""
   },
   "Queendiamonds": {
     "titre": "Reine de Carreau",
     "valeur": 3,
     "src": "Queendiamonds",
-    "couleur": "carreau"
+    "couleur": "carreau",
+    "atout": ""
   },
   "Queenspades": {
     "titre": "Reine de Pique",
     "valeur": 3,
     "src": "Queenspades",
-    "couleur": "pique"
+    "couleur": "pique",
+    "atout": ""
   },
   "Queenhearts": {
     "titre": "Reine de Coeur",
     "valeur": 3,
     "src": "Queenhearts",
-    "couleur": "coeur"
+    "couleur": "coeur",
+    "atout": ""
   },
   "Queenclubs": {
     "titre": "Reine de Trefle",
     "valeur": 3,
     "src": "Queenclubs",
-    "couleur": "trefle"
+    "couleur": "trefle",
+    "atout": ""
   },
   "Kingdiamonds": {
     "titre": "Roi de Carreau",
     "valeur": 4,
     "src": "Kingdiamonds",
-    "couleur": "carreau"
+    "couleur": "carreau",
+    "atout": ""
   },
   "Kingspades": {
     "titre": "Roi de Pique",
     "valeur": 4,
     "src": "Kingspades",
-    "couleur": "coeur"
+    "couleur": "coeur",
+    "atout": ""
   },
   "Kinghearts": {
     "titre": "Roi de Coeur",
     "valeur": 4,
     "src": "Kinghearts",
-    "couleur": "pique"
+    "couleur": "pique",
+    "atout": ""
   },
   "Kingclubs": {
     "titre": "Roi de Trefle",
     "valeur": 4,
     "src": "Kingclubs",
-    "couleur": "trefle"
+    "couleur": "trefle",
+    "atout": ""
   }
 }

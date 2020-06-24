@@ -7,11 +7,13 @@ $checkp1 = $bdd->prepare("SELECT * FROM belote WHERE idB = ?");
 $checkp1->execute(array($_SESSION['gid']));
 $reponse = $checkp1->fetchAll();
 
-$reserve = array(0 =>"7clubs", "8clubs", "9clubs", "10clubs", "Jackclubs", "Queenclubs", "Kingclubs",
-"7hearts", "8hearts", "9hearts", "10hearts", "Jackhearts", "Queenhearts", "Kinghearts",
-"7spades", "8spades", "9spades", "10spades", "Jackspades", "Queenspades", "Kingspades",
-"7diamonds", "8diamonds", "9diamonds", "10diamonds", "Jackdiamonds", "Queendiamonds", "Kingdiamonds"
+$reserve = array(0 =>"1clubs", "7clubs", "8clubs", "9clubs", "10clubs", "Jackclubs", "Queenclubs", "Kingclubs",
+  "1hearts", "7hearts", "8hearts", "9hearts", "10hearts", "Jackhearts", "Queenhearts", "Kinghearts",
+  "1spades", "7spades", "8spades", "9spades", "10spades", "Jackspades", "Queenspades", "Kingspades",
+  "1diamonds", "7diamonds", "8diamonds", "9diamonds", "10diamonds", "Jackdiamonds", "Queendiamonds", "Kingdiamonds"
 );
+
+shuffle($reserve);
 
 $paquet1 =[];
 $paquet2 =[];

@@ -37,11 +37,6 @@ span {
   border-radius: 2vh;
 }
 
-.disabled {
-  pointer-events: none;
-  border: none;
-}
-
 .top {
   height: 99%;
   position: absolute;
@@ -81,26 +76,37 @@ span {
   height: 25vh;
 }
 
-#nom1 {
-  bottom: 25vh;
-  left: 48vw;
+#table1 {
+  bottom: 18vh;
+  left: 43vw;
   position: absolute;
 }
 
-#nom2 {
-  left: 25vw;
-  top: 49.5vh;
+#table2 {
+  left: 18vw;
+  top: 44.5vh;
   position: absolute;
 }
 
-#nom3 {
-  top: 25vh;
-  left: 48vw;
+#table3 {
+  top: 18vh;
+  left: 43vw;
   position: absolute;
 }
 
-#nom4 {
-  right: 25vw;
-  top: 49.5vh;
+#table4 {
+  right: 18vw;
+  top: 44.5vh;
   position: absolute;
+}
+
+#plateau1, #plateau2, #plateau3, #plateau4 {
+  height: 12vh;
+}
+
+#table1, #table2, #table3, #table4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 14vw;
 }
