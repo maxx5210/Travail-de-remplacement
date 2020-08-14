@@ -5,7 +5,7 @@ $user = $_POST['user'];
 $email = $_POST['mail'];
 $pass = $_POST['pass'];
 $pass = password_hash($pass);
-
+ 
 $bdd = new PDO('mysql:host=localhost;dbname=' . $db_name, $db_user, $db_pass, array(
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 )) or die('Failed to connect');
